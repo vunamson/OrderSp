@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Act Fast – Your Cart is Hot and Running Out!</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 0 0 15px;
+    }
+    .coupon {
+      background-color: #e0e0e0;
+      border: 1px dashed #0071ce;
+      color: #0071ce;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px;
+      margin: 10px 0;
+      display: inline-block;
+    }
+    .button {
+      display: inline-block;
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 12px;
+      margin: 15px 0;
+    }
+    .footer {
+      background-color: #f4f4f4;
+      color: #888888;
+      font-size: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" bgcolor="#f4f4f4">
+    <tr>
+      <td align="center">
+        <table class="container">
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <img src="{company_logo_URL}" alt="{store_name} Logo">
+              <h1>Act Fast – Your Cart is Hot and Running Out!</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Dear {customer_name},</p>
+              <p>
+                We noticed that you haven’t completed your purchase yet, and we wanted to remind you that the item(s) in your cart are in high demand. Our stock is moving quickly, and we may not be able to hold these popular items for long.
+              </p>
+              <p>
+                To give you that extra nudge, here’s an exclusive 10% off coupon code: <span class="coupon">HURRY10</span>. This limited-time offer is our way of thanking you for considering {store_name} and encouraging you to secure your items before they’re gone.
+              </p>
+              <p>
+                Simply click the link below to return to your cart and complete your checkout in just one click:
+              </p>
+              <p style="text-align: center;">
+                <a href="{checkout_url}" class="button">Return to Cart</a>
+              </p>
+              <p>
+                Don’t miss out – act now and enjoy your exclusive discount!
+              </p>
+              <p>
+                Best regards,<br>
+                {store_name} Customer Support Team<br>
+                {email_supports}
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p>&copy;  {current_year} {store_name}. All rights reserved.</p>
+              <p>+1 (252) 590-0013</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

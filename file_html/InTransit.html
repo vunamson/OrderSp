@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Your Order is on the Way – Tracking Update</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 0 0 15px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    .footer {
+      background-color: #f4f4f4;
+      color: #888888;
+      font-size: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f4f4f4">
+    <tr>
+      <td align="center">
+        <!-- Container -->
+        <table class="container" border="0" cellspacing="0" cellpadding="0">
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <img src="{company_logo_URL}" alt="{store_name} Logo">
+              <h1>Your Order is on the Way – Tracking Update</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Dear {customer_name},</p>
+              <p>We are pleased to inform you that your order is currently in transit! This means your package is on its way to you and moving through the shipping process.</p>
+              <p>Your tracking number is <strong>{tracking_number}</strong>.</p>
+              <p style="text-align: center;">
+                <a href="https://17track.net/en#nums={tracking_number}" class="button">Track Your Order</a>
+              </p>
+              <p>Please rest assured that we are keeping an eye on your shipment and working closely with the carrier to ensure a smooth delivery. If you have any questions or need further assistance, feel free to reach out—we’re always happy to help!</p>
+              <p>Thank you for choosing {store_name}. We appreciate your patience and support!</p>
+              <p>Best regards,<br>{store_name} Customer Support Team</p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p>&copy; {current_year} {store_name}. All rights reserved.</p>
+              <p>+1 (252) 590-0013</p>
+            </td>
+          </tr>
+        </table>
+        <!-- End Container -->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You for Your Order – Enjoy an Exclusive 10% Off Coupon!</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 0 0 15px;
+    }
+    .coupon {
+      background-color: #e0e0e0;
+      border: 1px dashed #0071ce;
+      color: #0071ce;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin: 15px 0;
+    }
+    .footer {
+      background-color: #f4f4f4;
+      color: #888888;
+      font-size: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" bgcolor="#f4f4f4">
+    <tr>
+      <td align="center">
+        <table class="container">
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <img src="{company_logo_URL}" alt="{store_name} Logo">
+              <h1>Thank You for Your Order!</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Dear {customer_name},</p>
+              <p>
+                We sincerely appreciate you choosing {store_name} for your recent purchase.
+                Your support means the world to us, and we are thrilled to have you as a valued customer.
+              </p>
+              <p>
+                As a token of our gratitude, please enjoy an exclusive <strong>10% OFF</strong> coupon for your next purchase.
+              </p>
+              <div class="coupon">THANKYOU10</div>
+              <p>
+                Use the code above at checkout. This coupon is valid until {expiration_date}.
+              </p>
+              <p>
+                We look forward to delighting you with more exceptional products and services.
+                If you have any questions or need assistance, please don’t hesitate to reach out.
+              </p>
+              <p>
+                Warm regards,<br>
+                {store_name} Customer Support Team<br>
+                {email_supports}
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p>&copy; {current_year} {store_name}. All rights reserved.</p>
+              <p>+1 (252) 590-0013</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
