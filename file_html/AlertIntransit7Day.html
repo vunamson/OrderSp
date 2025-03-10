@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder: Check Tracking Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%" bgcolor="#f4f4f4">
+        <tr>
+            <td align="center">
+                <table class="container">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <img src="{company_logo_URL}" alt="{store_name} Logo">
+                            <h1>Reminder: Check Tracking Status</h1>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td class="content">
+                            <p>Dear {store_name},</p>
+                            <p>This is a friendly reminder that one or more customer orders have been in transit for over 7 days.</p>
+                            <p>Please review the tracking statuses to ensure that all shipments are proceeding as expected. Orders remaining in transit for an extended period may indicate potential issues that need your attention.</p>
+                            <p style="text-align: center;"><a class="button" href="https://17track.net/en#nums={tracking_number}">View Tracking Status</a></p>
+                            <p>Thank you for your attention to this matter.</p>
+                            <p>Sincerely,<br />Your Order Management System</p>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <p>&copy; {current_year} {store_name}. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
