@@ -216,6 +216,7 @@ class EmailSender:
             "expiration_date" : expiration_date.strftime("%Y-%m-%d %H:%M:%S"),
         }
         # Gửi email
-        subject = f"Update on Your Order - {status}"
+        list_subject = ["InfoReceived", "InTransit","PickUp","OutForDelivery","Undelivered","Delivered","Alert","Expired"]
+        subject = f"Update on Your Order - {status}" if status in list_subject else "Update on Your Order"
 
         self.send_email_gmail_api(emailSupport, email, subject, replacements, url_html_mail)

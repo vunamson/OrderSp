@@ -125,15 +125,15 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                 email_type = check_date_email(order_date)
                 if email_type:
                     if email_type not in ["marketing", "day14"]:
-                        email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, email_type + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                        email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                         google_sheets.update_cell(i, 10, email_type + "Failed")  # Cập nhật cột J
                     elif email_type == "marketing":
-                        email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, email_type, pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                        email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                         google_sheets.update_cell(i, 10, email_type + "Failed")
 
                 email_type_failed = check_date_email_failed(order_date)
                 if email_type_failed:
-                    email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, email_type_failed + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                    email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type_failed + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 10, email_type_failed + "Failed")
 
         else:
@@ -165,7 +165,7 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                     # ✅ Nếu trạng thái thay đổi -> Cập nhật vào Sheet & Gửi email
                     if new_status and new_status != current_status:
                         google_sheets.update_cell(i, 6, new_status)  # Cập nhật cột F
-                        email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                        email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                         google_sheets.update_cell(i, 10, new_status)  # Cập nhật cột J
                         request_count += 2
                     else:
@@ -174,12 +174,12 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                         google_sheets.update_cell(i, 10, '')
                         request_count += 1
                 elif email_type and email_type not in ["marketing", "day14"]:
-                    email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                    email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 10, email_type)
                     request_count += 2
                 
                 if email_type == "marketing":
-                    email_sender.email_check(list_mail_support[index],"vunamson231@gmail.com", customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                    email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 11, email_type)
                     request_count += 2
 
