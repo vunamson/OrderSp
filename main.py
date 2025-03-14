@@ -119,7 +119,7 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
         pay_url = row[7]
         shipping_state = row[8]
 
-        # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL
+        # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL và không mua lại sản phẩm
         if order_status == "failed" and not check_status_failure(sheet2_data, email, i):
             if shipping_state not in ["IL", "FL"]:
                 email_type = check_date_email(order_date)
@@ -127,19 +127,19 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                     if email_type not in ["marketing", "day14"]:
                         email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                         google_sheets.update_cell(i, 10, email_type + "Failed")  # Cập nhật cột J
-                    elif email_type == "marketing":
-                        email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-                        google_sheets.update_cell(i, 10, email_type + "Failed")
+                    # elif email_type == "marketing":
+                    #     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                    #     google_sheets.update_cell(i, 10, email_type + "Failed")
 
                 email_type_failed = check_date_email_failed(order_date)
                 if email_type_failed:
                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type_failed + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 10, email_type_failed + "Failed")
 
-        else:
-            if not check_order_id_no_status(sheet2_data, i, current_status):
+        else: #Nếu đơn hàng không failed 
+            if not check_order_id_no_status(sheet2_data, i, current_status): # Không có đơn hàng nào đằng trước cùng ID và cũng chưa có status
                 email_type = check_date_email(order_date)
-                if tracking_number:
+                if tracking_number: # kiểm tra xem đã có number checking chưa
                     tracker = Track17Selenium(tracking_number)
                     new_status = tracker.track()
                     # ✅ Kiểm tra nếu new_status là dict (trả về lỗi)
@@ -173,12 +173,12 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                             pass
                         google_sheets.update_cell(i, 10, '')
                         request_count += 1
-                elif email_type and email_type not in ["marketing", "day14"]:
+                elif email_type and email_type not in ["marketing", "day14"]: # nếu chưa có number checking mới bắt đầu gửi mail theo ngày
                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 10, email_type)
                     request_count += 2
                 
-                if email_type == "marketing":
+                if email_type == "marketing" and current_status == "Delivered": # Gửi mail cskh
                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                     google_sheets.update_cell(i, 11, email_type)
                     request_count += 2

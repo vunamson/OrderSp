@@ -22,7 +22,7 @@ def check_date_email(order_date):
             return "day4"
         elif 5 <= diff_days < 6:
             return "day5"
-        elif 20 <= diff_days < 21:
+        elif 50 <= diff_days < 51:
             return "marketing"
         else:
             return False
