@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from google_sheets import GoogleSheetHandler
 from checking_number import Track17Selenium
 from send_mail import EmailSender
-from check_date_email import check_date_email, check_date_email_failed
+from check_date_email import check_date
 import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
@@ -10,7 +10,7 @@ SHEET_IDS = [
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA",
     "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
-    # "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
+    "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
 ]
 
@@ -21,13 +21,13 @@ list_mail_support = [
     "support@davidress.com",
     "support@luxinshoes.com",
     "support@onesimpler.com",
-    # "support@xanawood.com",
+    "support@xanawood.com",
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = ["https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
                          "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
                          "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
-                        #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
+                         "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
                         #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
                          ]
 
@@ -49,11 +49,11 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//04hyLCMlWOcWtCgYIARAAGAQSNwF-L9IrS0ofz-gTJklz3CuVAcBPc2yrxrvNagCjmJonNFy5EMu47JGtkyfEuzRGEVsGkwm-ti0"
     },
-    # "Xanawood" : {
-    #     "CLIENT_ID" : "33001047069-o5lltvudmh92qnb392ti1h6bj7geccp2.apps.googleusercontent.com",
-    #     "CLIENT_SECRET" : "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",
-    #     "REFRESH_TOKEN" : "1//04PdMFDR0Cn0YCgYIARAAGAQSNwF-L9Ir2oyc1v-F4XR5eRLDHgC5zlQdDh8lxrsQs2-iXF_EdINjEpMAD65_QzYxxRIS2Nm1DLg"
-    # },
+    "Xanawood" : {
+        "CLIENT_ID" : "33001047069-o5lltvudmh92qnb392ti1h6bj7geccp2.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//04PdMFDR0Cn0YCgYIARAAGAQSNwF-L9Ir2oyc1v-F4XR5eRLDHgC5zlQdDh8lxrsQs2-iXF_EdINjEpMAD65_QzYxxRIS2Nm1DLg"
+    },
 }
 # CLIENT_ID = "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com"
 # CLIENT_SECRET = "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"
@@ -117,10 +117,11 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
         order_status = row[6]
         pay_url = row[7]
         shipping_state = row[8]
+        date_status_order = row[11]
 
         # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL
 
-        if tracking_number and not row[9] :
+        if tracking_number and (not row[9] or not row[12]) :
             tracker = Track17Selenium(tracking_number)
             new_status = tracker.track()
             print('new_status' , new_status)
@@ -133,11 +134,36 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
             elif("Alert" in new_status or new_status == "Delivery Exception") : new_status = "Alert"
             elif("Expired" in new_status) : new_status = "Expired"
             else: new_status=""
+
+            print('new_status2' , new_status)
+            # ✅ Nếu trạng thái thay đổi -> Cập nhật vào Sheet & Gửi email
+            status_order_false = ['Alert','Undelivered','Expired']
             if new_status and new_status != current_status:
                 google_sheets.update_cell(i, 6, new_status)  # Cập nhật cột F
                 email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                 google_sheets.update_cell(i, 10, new_status)  # Cập nhật cột J
                 request_count += 2
+                if new_status not in status_order_false : 
+                    google_sheets.update_cell(i, 12, datetime.now())
+                    google_sheets.update_cell(i, 13, '')
+                    request_count += 2
+                else : # Nếu order status bị lỗi gửi mail cho chính mình 
+                    email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "LoiOrder", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                    google_sheets.update_cell(i, 13, "Loi " + new_status)
+                    request_count +=1
+            else:
+                status_order_true = ['InfoReceived', 'InTransit','PickUp','OutForDelivery']
+                # sau 10 ngày và 13 ngày chưa chuyển trạng thái gửi mail cho chính mình 
+                if date_status_order and new_status : 
+                    day_status = check_date(date_status_order)
+                    if new_status in status_order_true and day_status == 10 :
+                        email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder10Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                        google_sheets.update_cell(i, 13, "ngày 10 chưa chuyển trạng thái ")
+                        request_count += 1
+                    elif new_status in status_order_true and day_status == 13 :
+                        email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder13Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                        google_sheets.update_cell(i, 13, "ngày 13 chưa chuyển trạng thái ")
+                        request_count += 1
         # ✅ Nghỉ giữa các lần chạy để tránh bị Google chặn
         if i % 20 == 0:
             print("🛑 Nghỉ 10 giây để tránh bị chặn...")

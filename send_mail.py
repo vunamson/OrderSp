@@ -196,7 +196,16 @@ class EmailSender:
             },
             "marketing": {
                 "url_mail": r"C:\17track\file_html\marketing.html",
-            }
+            },
+            "DelayOrder10Day" : {
+                "url_mail": r"C:\17track\file_html\DelayOrder10Day.html",
+            },
+            "DelayOrder13Day" : {
+                "url_mail": r"C:\17track\file_html\DelayOrder13Day.html",
+            },
+            "LoiOrder" : {
+                "url_mail": r"C:\17track\file_html\LoiOrder.html"
+            },
         }
 
         if status in email_templates:
@@ -214,6 +223,7 @@ class EmailSender:
             "checkout_url": checkout_url,
             "customer_testimonial": customer_testimonial,
             "expiration_date" : expiration_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "order_status" : status,
         }
         # Gửi email
         list_subject = ["InfoReceived", "InTransit","PickUp","OutForDelivery","Undelivered","Delivered","Alert","Expired"]

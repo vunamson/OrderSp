@@ -1,4 +1,20 @@
 from datetime import datetime
+from re import match
+
+def check_date(order_date) :
+    try:
+        if "/" in order_date:
+            order_date = datetime.strptime(order_date, "%m/%d/%Y").date()  # Chuyển đổi từ MM/DD/YYYY
+        else : 
+            order_date = order_date.split()[0]  # Lấy phần ngày, bỏ thời gian
+            order_date = datetime.strptime(order_date, "%Y-%m-%d").date()  # Chuyển thành datetime
+        
+        today = datetime.today().date()
+        diff_days = (today - order_date).days  # Tính số ngày chênh lệch
+        return match.floor(diff_days)
+    except Exception as e:
+        print(f"⚠️ Lỗi khi xử lý ngày tháng: {e}")
+        return False
 
 def check_date_email(order_date):
     try:
