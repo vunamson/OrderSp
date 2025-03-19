@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Đơn hàng có trạng thái {order_status} chưa chuyển trạng thái sau 13 ngày</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 0 0 15px;
+    }
+    .footer {
+      background-color: #f4f4f4;
+      color: #888888;
+      font-size: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" bgcolor="#f4f4f4">
+    <tr>
+      <td align="center">
+        <table class="container">
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <img src="{company_logo_URL}" alt="{store_name} Logo">
+              <h1>Đơn hàng đang chưa chuyển trạng thái status sau 13 ngày</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Đơn hàng từ cửa hàng {store_name}</p>
+              <p>Number checking đơn hàng {tracking_number}</p>
+              <p>Link checking <a href="https://17track.net/en#nums={tracking_number}" class="button">Kiểm tra sản phẩm</a></p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p>&copy; Kính chào bạn</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

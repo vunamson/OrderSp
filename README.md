@@ -28,4 +28,4 @@
 
 ### ----- 2.3 gửi lại mail với những number checking khi kiểm tra checking bị lỗi
 
-### -------------- ở file main_update kiểm tra tất cả các hàng của sheet2 cột E có value mà cột J chưa có value thì sẽ kiểm tra lại stauts để gửi mail
+### -------------- ở file main_update kiểm tra tất cả các hàng của sheet2 cột E có value mà cột J hoặc cột L(cột gửi mail cho mình)  chưa có value thì sẽ kiểm tra lại stauts để gửi mail
