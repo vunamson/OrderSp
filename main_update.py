@@ -10,7 +10,7 @@ SHEET_IDS = [
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA",
     "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
-    "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
+    # "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
 ]
 
@@ -21,13 +21,13 @@ list_mail_support = [
     "support@davidress.com",
     "support@luxinshoes.com",
     "support@onesimpler.com",
-    "support@xanawood.com",
+    # "support@xanawood.com",
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = ["https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
                          "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
                          "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
-                         "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
+                        #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
                         #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
                          ]
 
@@ -49,11 +49,11 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//04hyLCMlWOcWtCgYIARAAGAQSNwF-L9IrS0ofz-gTJklz3CuVAcBPc2yrxrvNagCjmJonNFy5EMu47JGtkyfEuzRGEVsGkwm-ti0"
     },
-    "Xanawood" : {
-        "CLIENT_ID" : "33001047069-o5lltvudmh92qnb392ti1h6bj7geccp2.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04PdMFDR0Cn0YCgYIARAAGAQSNwF-L9Ir2oyc1v-F4XR5eRLDHgC5zlQdDh8lxrsQs2-iXF_EdINjEpMAD65_QzYxxRIS2Nm1DLg"
-    },
+    # "Xanawood" : {
+    #     "CLIENT_ID" : "33001047069-o5lltvudmh92qnb392ti1h6bj7geccp2.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04PdMFDR0Cn0YCgYIARAAGAQSNwF-L9Ir2oyc1v-F4XR5eRLDHgC5zlQdDh8lxrsQs2-iXF_EdINjEpMAD65_QzYxxRIS2Nm1DLg"
+    # },
 }
 # CLIENT_ID = "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com"
 # CLIENT_SECRET = "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"
@@ -108,7 +108,7 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
             time.sleep(60)
             request_count = 0  # Reset bộ đếm
 
-        
+        row_length = len(row)
         order_date = row[0]
         email = row[2]
         customer_name = row[3]
@@ -117,11 +117,11 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
         order_status = row[6]
         pay_url = row[7]
         shipping_state = row[8]
-        date_status_order = row[11]
+        date_status_order = row[11] if row_length > 11 else ""
 
         # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL
-
-        if tracking_number and (not row[9] or not row[12]) :
+        row_12 =  row[12] if row_length > 12 else ""
+        if tracking_number and (not row[9] or not row_12) :
             tracker = Track17Selenium(tracking_number)
             new_status = tracker.track()
             print('new_status' , new_status)
@@ -143,8 +143,9 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                 email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
                 google_sheets.update_cell(i, 10, new_status)  # Cập nhật cột J
                 request_count += 2
-                if new_status not in status_order_false : 
-                    google_sheets.update_cell(i, 12, datetime.now())
+                if new_status not in status_order_false :
+                    formatted_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+                    google_sheets.update_cell(i, 12, formatted_datetime)
                     google_sheets.update_cell(i, 13, '')
                     request_count += 2
                 else : # Nếu order status bị lỗi gửi mail cho chính mình 
