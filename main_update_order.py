@@ -6,13 +6,13 @@ from gspread_formatting import (
     CellFormat, Color
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
-    # {
-    #     "url": "https://onesimpler.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://onesimpler.com/wp-json/wc/v3/products/",
-    #     "consumer_key": "ck_eb670ea5cee90d559872e5f29386eb3dbbb8f2da",
-    #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
-    #     "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
-    # },
+    {
+        "url": "https://onesimpler.com/wp-json/wc/v3/orders",
+        "product_url": "https://onesimpler.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_eb670ea5cee90d559872e5f29386eb3dbbb8f2da",
+        "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
+        "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
+    },
     # {
     #     "url": "https://lovasuit.com/wp-json/wc/v3/orders",
     #     "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
@@ -20,13 +20,13 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_71f70cbb54b1cf5566867635165fa783482c6919",
     #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
     # },
-    # {
-    #     "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
-    #     "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
-    #     "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
-    #     "sheet_id": "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
-    # },
+    {
+        "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
+        "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
+        "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
+        "sheet_id": "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
+    },
     {
         "url": "https://davidress.com/wp-json/wc/v3/orders",
         "product_url": "https://davidress.com/wp-json/wc/v3/products/",
@@ -263,7 +263,7 @@ def process_orders(orders, existing_orders,store, checking_maps):
                 is_first_item = False
 
     return new_orders, updated_orders
-def apply_formula_to_cells( sheet, column_letter,end_row):
+def apply_formula_to_cells( sheet, column_letter):
         """
         Gán công thức IMAGE() vào cột column_letter với link ảnh là ô ngay bên phải nó.
         :param sheet: Google Sheet cần chỉnh sửa.
@@ -277,10 +277,12 @@ def apply_formula_to_cells( sheet, column_letter,end_row):
                 print(f"❌ Không có đủ dữ liệu trong sheet để gán công thức.")
                 return
             start_row = 2  # Bắt đầu từ dòng 2  
+            end_row = num_rows
+
             # Xác định cột bên phải chứa link ảnh
             col_index = gspread.utils.a1_to_rowcol(column_letter + "1")[1]  # Lấy chỉ số cột (VD: 'AC' → 29)
             adjacent_col_letter = gspread.utils.rowcol_to_a1(1, col_index  -1).replace("1", "")  # Lấy cột bên trái (VD: 'AD')
-
+            print('adjacent_col_letter' ,adjacent_col_letter , col_index)
             # Xác định phạm vi ô (từ dòng 2 đến num_rows)
             cell_range = f"{column_letter}2:{column_letter}{num_rows}"
 
@@ -288,7 +290,7 @@ def apply_formula_to_cells( sheet, column_letter,end_row):
             formulas = [[f'=IMAGE({adjacent_col_letter}{i})'] for i in range(start_row, end_row + 1)]
 
             # Ghi công thức vào Google Sheets
-            sheet.update(cell_range, formulas,value_input_option="USER_ENTERED")
+            sheet.update(range_name=cell_range, values=formulas, value_input_option="USER_ENTERED")
             print(f"✅ Công thức đã được gán vào cột {column_letter} ({cell_range}) với link ảnh từ cột {adjacent_col_letter}.")
         except Exception as e:
             print(f"❌ Lỗi khi gán công thức vào {column_letter}: {e}")
@@ -311,8 +313,6 @@ def update_google_sheets(google_sheets, new_orders, updated_orders):
     # Thêm đơn hàng mới vào cuối sheet
     if new_orders:
         sheet1.append_rows(new_orders)
-        apply_formula_to_cells(sheet1, "AC", len(new_orders))
-
 
     print(f"✅ Đã thêm {len(new_orders)} đơn hàng mới")
     print(f"✅ Đã cập nhật {len(updated_orders)} đơn hàng")
@@ -323,7 +323,7 @@ def update_google_sheets(google_sheets, new_orders, updated_orders):
     print("✅ Đã sắp xếp lại Sheet1 theo Order Date")
     # 🌟 Tô màu cột Order Status
     format_order_status(sheet1)
-
+    apply_formula_to_cells(sheet1, "AC")
     # 🌟 Đặt chiều cao tất cả các hàng thành 100px
     set_row_heights_to_100(sheet1)
     print("✅ Đã tô lại màu Sheet1 theo Order Status")
