@@ -1,5 +1,6 @@
 import requests
 from google_sheets import GoogleSheetHandler  # Import class xử lý Google Sheets
+import gspread
 from gspread_formatting import (
     format_cell_ranges , set_row_heights,
     CellFormat, Color
@@ -92,8 +93,23 @@ def fetch_checking_numbers():
             print(f"⚠️ Lỗi khi lấy dữ liệu từ {source_name}: {e}")
 
     return checking_maps
+def check_sku_by_type(type_):
+    if type_:
+        if "T-Shirt" in type_:
+            return "TX"
+        elif "Hoodie" in type_ and "Zip" not in type_:
+            return "HDZ72M"
+        elif "Zip Hoodie" in type_:
+            return "ZIP"
+        elif "Sweatshirt" in type_:
+            return "WY"
+        elif "Long Sleeve" in type_:
+            return "CX"
+        elif "Tank Top" in type_:
+            return "BX"
+    return ""
 
-def fetch_product_details(store, product_id):
+def fetch_product_details(store, product_id,type_):
     """
     Trả về product_url, list_images, sku_workshop, factory dựa trên product_id
     """
@@ -106,14 +122,13 @@ def fetch_product_details(store, product_id):
         response = requests.get(product_url)
         if response.status_code == 200:
             product_data = response.json()
-
             product_permalink = product_data.get("permalink", "")
             list_images = ", ".join(img["src"] for img in product_data.get("images", []))
             
             # 🌟 Lấy SKU workshop và Factory
             categories = product_data.get("categories", [])
             if categories:
-                sku_workshop = categories[0]["name"].split("-")[0].strip()  # Lấy phần đầu trước dấu '-'
+                sku_workshop = check_sku_by_type(type_) or categories[0]["name"].split("-")[0].strip()  # Lấy phần đầu trước dấu '-'
                 factory = "TP" if sku_workshop == "AODAU" else "MF"
             else:
                 sku_workshop = ""
@@ -137,7 +152,6 @@ def fetch_orders(store):
             f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}"
         )
         data = response.json()
-        print('data ------' ,page , data)
         if not data or isinstance(data, dict) and "status" in data and data["status"] != 200:
             break
         orders.extend(data)
@@ -160,6 +174,13 @@ def extract_metadata_value(meta_data, keys, default=""):
 
 
 # 🌟 Xử lý dữ liệu đơn hàng
+def clean_value(value):
+    """
+    Trả về phần đầu tiên trước khoảng trắng (nếu có).
+    """
+    value = str(value).strip()
+    return value.split()[0] if value else ""
+
 def process_orders(orders, existing_orders,store, checking_maps):
     new_orders = []
     updated_orders = []
@@ -198,7 +219,6 @@ def process_orders(orders, existing_orders,store, checking_maps):
         # 🌟 Kiểm tra đơn hàng đã có trong Google Sheets chưa
         if order_id in existing_orders:
             existing_row = existing_orders[order_id]
-            print('existing_row',existing_row)
             current_status = existing_row["Order Status"]
             existing_checking_number = existing_row["Number Checking"]
 
@@ -216,31 +236,65 @@ def process_orders(orders, existing_orders,store, checking_maps):
                 unit_cost = item["price"]
                 total_cost = item["total"]
                 link_image = item["image"]["src"] if "image" in item else ""
-                image_formula = f'=IMAGE("{link_image}")' if link_image else ""
 
                 custom_name = extract_metadata_value(item["meta_data"], ["Custom Name:", "Custom Name (Optional)","Custom Name (Optional):","Custom Name"])
                 custom_number = extract_metadata_value(item["meta_data"], ["Custom Number:", "Custom Number (Optional)","Custom Number (Optional):","Custom Number"])
                 size = extract_metadata_value(item["meta_data"], ["Size", "SIZE:", "Size Men", "Size Women","Size:","SIZE","Size Men:","Size Women:","pa_size","size"])
+                size = clean_value(size)
                 color = extract_metadata_value(item["meta_data"], ["Color","Color:","COLOR", "COLOR:","Handle Color"])
-                gender = extract_metadata_value(item["meta_data"], ["Gender", "Gender:", "Type"])
+                gender = extract_metadata_value(item["meta_data"], ["Gender", "Gender:"])
+                gender = clean_value(gender)
                 
                 # Chỉ giữ lại giá trị hợp lệ cho Gender
                 # valid_genders = {"Men", "Women", "Unisex"}
                 # gender = gender if gender in valid_genders else ""
 
                 type_ = extract_metadata_value(item["meta_data"], ["Type", "TYPE:", "Style:", "Stype", "STYPE","pa_style","STYPE:"])
+                type_ = clean_value(type_)
                 # type_ = "" if type_ in valid_genders else type_
-                product_url, list_link_image, sku_workshop, factory = fetch_product_details(store, product_id)
+                product_url, list_link_image, sku_workshop, factory = fetch_product_details(store, product_id ,type_)
 
                 new_orders.append([
                     order_date, order_id, order_status, pay_url, customer_name, shipping_address_1, shipping_address_2, city, postcode,
                     state, country, billing_phone, shipping_phone, email, note, custom_name, custom_number, size, color, gender, type_,
-                    product_name, product_id, sku, quantity, shipping_total, order_total if is_first_item else "", link_image, image_formula, list_link_image,
+                    product_name, product_id, sku, quantity, shipping_total, order_total if is_first_item else "", link_image, "", list_link_image,
                     product_url, unit_cost, total_cost, sku_workshop, factory, checking_number
                 ])
                 is_first_item = False
 
     return new_orders, updated_orders
+def apply_formula_to_cells( sheet, column_letter):
+        """
+        Gán công thức IMAGE() vào cột column_letter với link ảnh là ô ngay bên phải nó.
+        :param sheet: Google Sheet cần chỉnh sửa.
+        :param column_letter: Vị trí của cột cần gán công thức (Ví dụ: 'AC').
+        """
+        try:
+            data = sheet.get_all_values()
+            num_rows = len(data)  # Tổng số dòng có dữ liệu
+
+            if num_rows <= 1:
+                print(f"❌ Không có đủ dữ liệu trong sheet để gán công thức.")
+                return
+            start_row = 2  # Bắt đầu từ dòng 2  
+            end_row = num_rows
+
+            # Xác định cột bên phải chứa link ảnh
+            col_index = gspread.utils.a1_to_rowcol(column_letter + "1")[1]  # Lấy chỉ số cột (VD: 'AC' → 29)
+            adjacent_col_letter = gspread.utils.rowcol_to_a1(1, col_index  -1).replace("1", "")  # Lấy cột bên trái (VD: 'AD')
+            print('adjacent_col_letter' ,adjacent_col_letter , col_index)
+            # Xác định phạm vi ô (từ dòng 2 đến num_rows)
+            cell_range = f"{column_letter}2:{column_letter}{num_rows}"
+
+            # Tạo danh sách công thức theo từng dòng (VD: =IMAGE(AD2))
+            formulas = [[f'=IMAGE({adjacent_col_letter}{i})'] for i in range(start_row, end_row + 1)]
+
+            # Ghi công thức vào Google Sheets
+            sheet.update(range_name=cell_range, values=formulas, value_input_option="USER_ENTERED")
+            print(f"✅ Công thức đã được gán vào cột {column_letter} ({cell_range}) với link ảnh từ cột {adjacent_col_letter}.")
+        except Exception as e:
+            print(f"❌ Lỗi khi gán công thức vào {column_letter}: {e}")
+
 
 # 🌟 Cập nhật dữ liệu trong Google Sheets
 def update_google_sheets(google_sheets, new_orders, updated_orders):
@@ -269,7 +323,7 @@ def update_google_sheets(google_sheets, new_orders, updated_orders):
     print("✅ Đã sắp xếp lại Sheet1 theo Order Date")
     # 🌟 Tô màu cột Order Status
     format_order_status(sheet1)
-
+    apply_formula_to_cells(sheet1, "AC")
     # 🌟 Đặt chiều cao tất cả các hàng thành 100px
     set_row_heights_to_100(sheet1)
     print("✅ Đã tô lại màu Sheet1 theo Order Status")

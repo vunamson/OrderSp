@@ -28,4 +28,10 @@
 
 ### ----- 2.3 gửi lại mail với những number checking khi kiểm tra checking bị lỗi
 
-### -------------- ở file main_update kiểm tra tất cả các hàng của sheet2 cột E có value mà cột J hoặc cột L(cột gửi mail cho mình)  chưa có value thì sẽ kiểm tra lại stauts để gửi mail
+### -------------- ở file main_update kiểm tra tất cả các hàng của sheet2 cột E có value mà cột J hoặc cột L(cột gửi mail cho mình) chưa có value thì sẽ kiểm tra lại stauts để gửi mail
+
+### ------------file main_update_order : cập nhật order của tất cả các cửa hàng
+
+#### ------------- th1 nếu order id chưa có thong sheet : thêm hàng dữ liệu đó vào sheet
+
+#### ------------- th2 nếu đã có order id thì cập nhật lại 2 trường order status + number checking của các order id đó ( phần này có thể cải thiện là nếu order id có sự khác biệt về number checking hoặc order status thì mới cập nhât -> giảm số lượng request lên google sheet nhưng tăng số phép tính thực hiện trong code) hiện tại đang cập nhật lại toàn bộ chứ k só sánh

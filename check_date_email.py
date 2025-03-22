@@ -1,5 +1,5 @@
 from datetime import datetime
-from re import match
+import math
 
 def check_date(order_date) :
     try:
@@ -11,7 +11,7 @@ def check_date(order_date) :
         
         today = datetime.today().date()
         diff_days = (today - order_date).days  # Tính số ngày chênh lệch
-        return match.floor(diff_days)
+        return math.floor(diff_days)
     except Exception as e:
         print(f"⚠️ Lỗi khi xử lý ngày tháng: {e}")
         return False
