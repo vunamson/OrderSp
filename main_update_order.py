@@ -200,7 +200,6 @@ def process_orders(orders, existing_orders,store, checking_maps):
         billing_phone = order["billing"]["phone"]
         shipping_phone = order["shipping"].get("phone", "")
         email = order["billing"]["email"]
-        note = order.get("customer_note", "")
         pay_url = order.get("payment_url", "")
         shipping_total = order["shipping_total"]
 
@@ -239,6 +238,11 @@ def process_orders(orders, existing_orders,store, checking_maps):
 
                 custom_name = extract_metadata_value(item["meta_data"], ["Custom Name:", "Custom Name (Optional)","Custom Name (Optional):","Custom Name"])
                 custom_number = extract_metadata_value(item["meta_data"], ["Custom Number:", "Custom Number (Optional)","Custom Number (Optional):","Custom Number"])
+                note = extract_metadata_value(item["meta_data"], [
+                    "Your Personalized Text: (Name, Number, and more...)",
+                    "Customer Note",
+                    "Customer Note (Custom Name, Number or etc)"
+                ])
                 size = extract_metadata_value(item["meta_data"], ["Size", "SIZE:", "Size Men", "Size Women","Size:","SIZE","Size Men:","Size Women:","pa_size","size"])
                 size = clean_value(size)
                 color = extract_metadata_value(item["meta_data"], ["Color","Color:","COLOR", "COLOR:","Handle Color"])
