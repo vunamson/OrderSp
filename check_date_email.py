@@ -5,6 +5,8 @@ def check_date(order_date) :
     try:
         if "/" in order_date:
             order_date = datetime.strptime(order_date, "%m/%d/%Y").date()  # Chuyển đổi từ MM/DD/YYYY
+        elif "T" in order_date:
+            order_date = datetime.fromisoformat(order_date).date()
         else : 
             order_date = order_date.split()[0]  # Lấy phần ngày, bỏ thời gian
             order_date = datetime.strptime(order_date, "%Y-%m-%d").date()  # Chuyển thành datetime
@@ -21,6 +23,8 @@ def check_date_email(order_date):
         # ✅ Kiểm tra nếu order_date chứa thời gian -> Cắt bỏ thời gian, chỉ lấy ngày
         if "/" in order_date:
              order_date = datetime.strptime(order_date, "%m/%d/%Y").date()  # Chuyển đổi từ MM/DD/YYYY
+        elif "T" in order_date:
+            order_date =  datetime.fromisoformat(order_date).date()
         else : 
             order_date = order_date.split()[0]  # Lấy phần ngày, bỏ thời gian
             order_date = datetime.strptime(order_date, "%Y-%m-%d").date()  # Chuyển thành datetime
@@ -52,6 +56,8 @@ def check_date_email_failed(order_date):
     today = datetime.today().date()
     if "/" in order_date:
         order_date = datetime.strptime(order_date, "%m/%d/%Y").date()  # Chuyển đổi từ MM/DD/YYYY
+    elif "T" in order_date:
+        order_date = datetime.fromisoformat(order_date).date()
     else : 
         order_date = order_date.split()[0]  # Lấy phần ngày, bỏ thời gian
         order_date = datetime.strptime(order_date, "%Y-%m-%d").date()  # Chuyển thành datetime
