@@ -6,13 +6,20 @@ from gspread_formatting import (
     CellFormat, Color
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
-    {
-        "url": "https://onesimpler.com/wp-json/wc/v3/orders",
-        "product_url": "https://onesimpler.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_eb670ea5cee90d559872e5f29386eb3dbbb8f2da",
-        "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
-        "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
-    },
+    # {
+    #     "url": "https://craftedpod.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://craftedpod.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_bdf4bb6a38d558ad042c356346cfd79feddd492f",
+    #     "consumer_secret": "cs_08a8e4957bc32840fbd0b0a2cf91522df0b7840c",
+    #     "sheet_id": "1u7XQOeP7vegn5u1wR-HZHKv0vjV5FcOzIh1nY92F7jw"
+    # },
+    # {
+    #     "url": "https://onesimpler.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://onesimpler.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_eb670ea5cee90d559872e5f29386eb3dbbb8f2da",
+    #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
+    #     "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
+    # },
     # {
     #     "url": "https://lovasuit.com/wp-json/wc/v3/orders",
     #     "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
@@ -363,9 +370,13 @@ def format_order_status(sheet):
     completed_format = CellFormat(backgroundColor=Color(0, 1, 0))  # Màu xanh 🟢
 
     # Áp dụng định dạng màu cho từng nhóm trạng thái
-    format_cell_ranges(sheet, [(cell, processing_format) for cell in processing_cells])
-    format_cell_ranges(sheet, [(cell, failed_format) for cell in failed_cells])
-    format_cell_ranges(sheet, [(cell, completed_format) for cell in completed_cells])
+    if processing_cells:
+        format_cell_ranges(sheet, [(cell, processing_format) for cell in processing_cells])
+    if failed_cells:
+        format_cell_ranges(sheet, [(cell, failed_format) for cell in failed_cells])
+    if completed_cells:
+        format_cell_ranges(sheet, [(cell, completed_format) for cell in completed_cells])
+
 
     print("✅ Đã tô màu cột Order Status theo trạng thái đơn hàng")
 

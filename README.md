@@ -35,3 +35,15 @@
 #### ------------- th1 nếu order id chưa có thong sheet : thêm hàng dữ liệu đó vào sheet
 
 #### ------------- th2 nếu đã có order id thì cập nhật lại 2 trường order status + number checking của các order id đó ( phần này có thể cải thiện là nếu order id có sự khác biệt về number checking hoặc order status thì mới cập nhât -> giảm số lượng request lên google sheet nhưng tăng số phép tính thực hiện trong code) hiện tại đang cập nhật lại toàn bộ chứ k só sánh
+
+### ------------- file main_add_checking_order : kiểm tra tất cả các hàng ở sheet1
+
+##### -------------------có order_id and number_checking kiểm tra xem order_id đó đã nhập checking trong web chưa - nếu đã nhập rồi thì bỏ qua nếu chưa thì sẽ call api để nhập number checking và order status vào trong web
+
+#### luồng chạy : chạy file main_update_order để cập nhật tất cả các order(cập nhật chứ không tạo mới)
+
+#### chạy file main để gửi mail tự động cho khách hàng (hàm này cập nhật cả sheet2 để gửi mail)
+
+#### chạy file main_update để kiểm tra lại các number checking để gửi lại mail khi file main kiểm tra number checking bị sót
+
+#### chạy file main_add_checking_order để cập nhật number checking và status order trong web admin
