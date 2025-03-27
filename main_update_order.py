@@ -396,10 +396,17 @@ if __name__ == "__main__":
         print(f"\n🚀 Đang cập nhật dữ liệu cho store: {store['url']}")
 
         google_sheets = GoogleSheetHandler(store["sheet_id"])
+        print('11111111111111')
         sheet1, _ = google_sheets.get_sheets()
+        print('2222222')
         existing_data = sheet1.get_all_values()
+        print('333333333')
         existing_orders = {row[1]: {"Order Status": row[2],"Number Checking" : row[35]} for row in existing_data[1:]}
+        print('444444444')
         orders = fetch_orders(store)
+        print('555555555')
         new_orders, updated_orders = process_orders(orders, existing_orders, store, checking_maps)
+        print('66666666')
         update_google_sheets(google_sheets, new_orders, updated_orders)
+        print('777777777')
     print("\n🎉 Hoàn tất cập nhật đơn hàng!") 

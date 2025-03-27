@@ -5,24 +5,30 @@ from datetime import datetime
 
 # 🚀 Danh sách các Google Sheet ID và cấu hình WooCommerce Store
 SHEET_AND_STORES = {
-    "1u7XQOeP7vegn5u1wR-HZHKv0vjV5FcOzIh1nY92F7jw": {
-        "url": "https://craftedpod.com/",
-        "consumer_key": "ck_bdf4bb6a38d558ad042c356346cfd79feddd492f",
-        "consumer_secret": "cs_08a8e4957bc32840fbd0b0a2cf91522df0b7840c",
-        "type_date": "Etc/GMT+2"
+    # "1u7XQOeP7vegn5u1wR-HZHKv0vjV5FcOzIh1nY92F7jw": {
+    #     "url": "https://craftedpod.com/",
+    #     "consumer_key": "ck_bdf4bb6a38d558ad042c356346cfd79feddd492f",
+    #     "consumer_secret": "cs_08a8e4957bc32840fbd0b0a2cf91522df0b7840c",
+    #     "type_date": "Etc/GMT+2"
+    # },
+    # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM": {
+    #     "url": "https://onesimpler.com/",
+    #     "consumer_key": "ck_eb670ea5cee90d559872e5f29386eb3dbbb8f2da",
+    #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
+    #     "type_date": "Etc/GMT+4"
+    # },
+    "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
+        "url": "https://davidress.com/",
+        "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
+        "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
+        "type_date": "Etc/GMT+5"
     },
-    # "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
-    #     "url": "https://davidress.com/wp-json/wc/v3/orders",
-    #     "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
-    #     "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
-    #     "type_date": "UTC-5"
-    # },
-    # "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA": {
-    #     "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
-    #     "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
-    #     "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
-    #     "type_date": "UTC-4"
-    # },
+    "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA": {
+        "url": "https://luxinshoes.com/",
+        "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
+        "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
+        "type_date": "Etc/GMT+4"
+    },
     # Thêm các store khác nếu có
 }
 
@@ -64,19 +70,22 @@ def update_order_tracking(order_id, tracking_number, store_config):
         url = f"{store_config['url']}wp-json/wc-shipment-tracking/v3/orders/{order_id}/shipment-trackings"
         
         # Dữ liệu gửi đi, bao gồm tracking number và provider
-        payload = {
-            "custom_tracking_provider": "Custom Provider",  # Thay provider name theo yêu cầu
-            "tracking_number": tracking_number,
-            "custom_tracking_link" :  "https://t.17track.net/en#nums={tracking_number}",
-            "date_shipped": get_current_time_in_timezone(store_config["type_date"])
-        }
-        # Gửi yêu cầu POST tới API Shipment Tracking
-        response = requests.post(
-            url,
-            json=payload,
-            auth=(store_config['consumer_key'], store_config['consumer_secret']),  # Thêm auth với consumer_key và consumer_secret
-            headers={"Content-Type": "application/json"}
-        )
+        try : 
+            payload = {
+                "custom_tracking_provider": "Custom Provider",  # Thay provider name theo yêu cầu
+                "tracking_number": tracking_number,
+                "custom_tracking_link" :  f"https://t.17track.net/en#nums={tracking_number}",
+                "date_shipped": get_current_time_in_timezone(store_config["type_date"])
+            }
+            # Gửi yêu cầu POST tới API Shipment Tracking
+            response = requests.post(
+                url,
+                json=payload,
+                auth=(store_config['consumer_key'], store_config['consumer_secret']),  # Thêm auth với consumer_key và consumer_secret
+                headers={"Content-Type": "application/json"}
+            )
+        except Exception as e:
+            print(f"❌ Lỗi khi xử lý cập nhật mã theo dõi {order_id}: {e}")
         
         if response.status_code == 200 or response.status_code == 201 :
             print(f"✅ Cập nhật thành công mã theo dõi cho đơn hàng {order_id}.")
