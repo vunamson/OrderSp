@@ -9,24 +9,26 @@ import time
 SHEET_IDS = [
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA",
-    "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
+    # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
     # "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
 ]
 
-nameStor = [ "Davidress","Luxinshoes","Onesimpler"]
+nameStor = [ "Davidress","Luxinshoes",
+            # "Onesimpler"
+            ]
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
     "support@davidress.com",
     "support@luxinshoes.com",
-    "support@onesimpler.com",
+    # "support@onesimpler.com",
     # "support@xanawood.com",
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = ["https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
                          "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
-                         "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
+                        #  "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
                         #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
                         #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
                          ]
@@ -44,11 +46,11 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//04E-tOajsSHlKCgYIARAAGAQSNwF-L9IrnIaaQl5ezgqjEbd2mRpueH7bfESoQcZJx8oYU_67cscyMVhPkBudJjW6PRlWEQbf7ns"
     },
-    "Onesimpler" : {
-        "CLIENT_ID" : "802842070292-fdpnac2kp98gcpjb5tspphjbb5obsvr6.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04hyLCMlWOcWtCgYIARAAGAQSNwF-L9IrS0ofz-gTJklz3CuVAcBPc2yrxrvNagCjmJonNFy5EMu47JGtkyfEuzRGEVsGkwm-ti0"
-    },
+    # "Onesimpler" : {
+    #     "CLIENT_ID" : "802842070292-fdpnac2kp98gcpjb5tspphjbb5obsvr6.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04hyLCMlWOcWtCgYIARAAGAQSNwF-L9IrS0ofz-gTJklz3CuVAcBPc2yrxrvNagCjmJonNFy5EMu47JGtkyfEuzRGEVsGkwm-ti0"
+    # },
     # "Xanawood" : {
     #     "CLIENT_ID" : "33001047069-o5lltvudmh92qnb392ti1h6bj7geccp2.apps.googleusercontent.com",
     #     "CLIENT_SECRET" : "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",
@@ -129,9 +131,9 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
             elif "In transit" in new_status or new_status =="Depart from port" or new_status=="Arrived at port" : new_status = "InTransit"
             elif("Pick up" in new_status) : new_status = "PickUp"
             elif("Out for delivery" in new_status) : new_status = "OutForDelivery"
-            elif("Undelivered" in new_status) : new_status = "Undelivered"
+            elif("Undelivered" in new_status or new_status == "Delivery Exception") : new_status = "Undelivered"
             elif("Delivered" in new_status) : new_status = "Delivered"
-            elif("Alert" in new_status or new_status == "Delivery Exception") : new_status = "Alert"
+            elif("Alert" in new_status or new_status =="Package Exception") : new_status = "Alert"
             elif("Expired" in new_status) : new_status = "Expired"
             else: new_status=""
 

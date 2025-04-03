@@ -156,9 +156,9 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
                     elif "In transit" in new_status or new_status =="Depart from port" or new_status=="Arrived at port" : new_status = "InTransit"
                     elif("Pick up" in new_status) : new_status = "PickUp"
                     elif("Out for delivery" in new_status) : new_status = "OutForDelivery"
-                    elif("Undelivered" in new_status) : new_status = "Undelivered"
+                    elif("Undelivered" in new_status or new_status == "Delivery Exception") : new_status = "Undelivered"
                     elif("Delivered" in new_status) : new_status = "Delivered"
-                    elif("Alert" in new_status or new_status == "Delivery Exception") : new_status = "Alert"
+                    elif("Alert" in new_status or new_status =="Package Exception") : new_status = "Alert"
                     elif("Expired" in new_status) : new_status = "Expired"
                     else: new_status=""
 
