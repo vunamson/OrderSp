@@ -1,3 +1,4 @@
+import time
 import requests
 import pytz
 from google_sheets import GoogleSheetHandler
@@ -66,6 +67,7 @@ def update_order_tracking(order_id, tracking_number, store_config):
     """
     Cập nhật mã theo dõi cho đơn hàng trong WooCommerce.
     """
+    time.sleep(2)
     try:
         url = f"{store_config['url']}wp-json/wc-shipment-tracking/v3/orders/{order_id}/shipment-trackings"
         
