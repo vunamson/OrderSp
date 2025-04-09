@@ -1,3 +1,4 @@
+import time
 import requests
 from google_sheets import GoogleSheetHandler  # Import class xử lý Google Sheets
 import gspread
@@ -312,11 +313,20 @@ def update_google_sheets(google_sheets, new_orders, updated_orders):
     sheet1, sheet2 = google_sheets.get_sheets()
     updates = []
     # Cập nhật trạng thái đơn hàng và Checking Number nếu có thay đổi
+    order_ids_in_sheet = sheet1.col_values(2)  # Cột B là Order ID
+    order_id_to_row = {oid.strip(): idx+1 for idx, oid in enumerate(order_ids_in_sheet)}
+
     for order_id, new_status, new_checking_number in updated_orders:
-        cell = sheet1.find(order_id, in_column=2)  # Order ID là cột 2
-        if cell:
-            updates.append({"range": f"C{cell.row}", "values": [[new_status]]})  # Cột 3 là Order Status
-            updates.append({"range": f"AJ{cell.row}", "values": [[new_checking_number]]})  # Cột 36 (AJ) là Checking Number
+        # cell = sheet1.find(order_id, in_column=2)  # Order ID là cột 2
+        # order_id_number = int(order_id)
+        # if order_id_number % 100 == 0 :
+        #     print(f"🕒 Tạm dừng 100 giây vì order_id {order_id} chia hết cho 100...")
+        #     time.sleep(100)
+        row = order_id_to_row.get(order_id)
+
+        if row:
+            updates.append({"range": f"C{row}", "values": [[new_status]]})  # Cột 3 là Order Status
+            updates.append({"range": f"AJ{row}", "values": [[new_checking_number]]})  # Cột 36 (AJ) là Checking Number
 
     if updates:
         sheet1.batch_update(updates)  # Gửi tất cả yêu cầu cập nhật cùng lúc
