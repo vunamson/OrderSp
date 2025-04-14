@@ -29,6 +29,27 @@ WOOCOMMERCE_STORES = [
     #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
     # },
     {
+        "url": "https://printpear.com/wp-json/wc/v3/orders",
+        "product_url": "https://printpear.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
+        "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
+        "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
+    },
+    {
+        "url": "https://cracksetup.com/wp-json/wc/v3/orders",
+        "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_161b3deffed9f0f1f319b774486b3a2a4ecf4d61",
+        "consumer_secret": "cs_ccb0ca4e2a9707635b9d64e33e4038b24b252c7d",
+        "sheet_id": "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw"
+    },
+    {
+        "url": "https://clomic.com/wp-json/wc/v3/orders",
+        "product_url": "https://clomic.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
+        "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
+        "sheet_id": "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw"
+    },
+    {
         "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
         "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
         "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
@@ -68,6 +89,12 @@ SHEET_SOURCES = {
         "sheet_name": "WEB",
         "order_id_col": 1,  # Cột L (Order ID)
         "checking_number_col": 4  # Cột E (Checking Number)
+    },
+    "hog" : {
+        "sheet_id": "1jDZbTZzUG-_Sw3NXgKMjRa5YD9V3PjMkLlx78-w688Y",
+        "sheet_name": "3D(BY SELLER)",
+        "order_id_col": 4,  # Cột L (Order ID)
+        "checking_number_col": 5  # Cột E (Checking Number)
     }
 }
 
@@ -79,7 +106,8 @@ def fetch_checking_numbers():
         "shoes": {},
         "cn": {},
         "merchfox": {},
-        "webbb": {}
+        "webbb": {},
+        "hog" : {}
     }
 
     for source_name, source in SHEET_SOURCES.items():
@@ -101,7 +129,7 @@ def fetch_checking_numbers():
             print(f"⚠️ Lỗi khi lấy dữ liệu từ {source_name}: {e}")
 
     return checking_maps
-def check_sku_by_type(type_):
+def check_sku_by_type_mf(type_):
     if type_:
         if "T-Shirt" in type_:
             return "TX"
@@ -115,6 +143,22 @@ def check_sku_by_type(type_):
             return "CX"
         elif "Tank Top" in type_:
             return "BX"
+    return ""
+
+def check_sku_by_type_hog(type_):
+    if type_:
+        if "T-Shirt" in type_:
+            return "T-Shirt 3D"
+        elif "Hoodie" in type_ and "Zip" not in type_:
+            return "Hoodie"
+        elif "Zip Hoodie" in type_:
+            return "Zip Hoodie"
+        elif "Sweatshirt" in type_:
+            return "WY"
+        elif "Long Sleeve" in type_:
+            return "Long Sleeve Tee"
+        elif "Tank Top" in type_:
+            return "Tank Top"
     return ""
 
 def fetch_product_details(store, product_id,type_):
@@ -136,7 +180,18 @@ def fetch_product_details(store, product_id,type_):
             # 🌟 Lấy SKU workshop và Factory
             categories = product_data.get("categories", [])
             if categories:
-                sku_workshop = check_sku_by_type(type_) or categories[0]["name"].split("-")[0].strip()  # Lấy phần đầu trước dấu '-'
+                name_parts = categories[0]["name"].split("-")
+                if len(name_parts) >= 2:
+                    categorie = name_parts[0].strip() if name_parts[0].strip() == "AODAU" else name_parts[1].strip()
+                else:
+                    categorie = name_parts[0].strip()  # hoặc gán giá trị mặc định nếu muốn
+                check_sku_type_mf = check_sku_by_type_mf(type_)
+                check_sku_type_hog = check_sku_by_type_hog(type_)
+                if check_sku_type_mf or check_sku_type_hog :
+                    check_sku_type = check_sku_type_hog +'-'+ check_sku_type_mf
+                else : 
+                    check_sku_type = ''
+                sku_workshop = check_sku_type or categorie  # Lấy phần đầu trước dấu '-'
                 factory = "TP" if sku_workshop == "AODAU" else "MF"
             else:
                 sku_workshop = ""
@@ -220,6 +275,8 @@ def process_orders(orders, existing_orders,store, checking_maps):
             checking_number = checking_maps["cn"][order_id]
         elif order_id in checking_maps["webbb"]:
             checking_number = checking_maps["webbb"][order_id]
+        elif order_id in checking_maps["hog"]:
+            checking_number = checking_maps["hog"][order_id]
 
 
 

@@ -18,6 +18,12 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
+    # "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw": {
+    #     "url": "https://clomic.com/",
+    #     "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
+    #     "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
+    #     "type_date": "Etc/GMT+0"
+    # },
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
         "url": "https://davidress.com/",
         "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
@@ -131,7 +137,7 @@ def process_orders(sheet_id, store_config ):
         for row in data[1:]:  # Bỏ qua tiêu đề
             order_id = row[order_id_idx].strip()
             number_checking = row[number_checking_idx].strip()
-            if order_id and number_checking:  # Kiểm tra nếu có mã theo dõi
+            if order_id and number_checking and number_checking != "Cancel":  # Kiểm tra nếu có mã theo dõi
                 print(f"🔍 Đang kiểm tra mã theo dõi cho đơn hàng: {order_id}")
                 # Kiểm tra mã theo dõi
                 existing_tracking = get_order_tracking(order_id, store_config)
