@@ -18,12 +18,18 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
-    # "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw": {
-    #     "url": "https://clomic.com/",
-    #     "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
-    #     "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
-    #     "type_date": "Etc/GMT+0"
-    # },
+    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc": {
+        "url": "https://printpear.com/",
+        "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
+        "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
+        "type_date": "Etc/GMT+0"
+    },
+    "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw": {
+        "url": "https://clomic.com/",
+        "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
+        "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
+        "type_date": "Etc/GMT+0"
+    },
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
         "url": "https://davidress.com/",
         "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",

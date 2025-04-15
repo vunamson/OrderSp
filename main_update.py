@@ -7,6 +7,9 @@ import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
 SHEET_IDS = [
+    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
+    # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
+    "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA",
     # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
@@ -14,28 +17,47 @@ SHEET_IDS = [
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
 ]
 
-nameStor = [ "Davidress","Luxinshoes",
-            # "Onesimpler"
-            ]
+nameStor = [
+    "Printpear",
+    # "Cracksetup",
+    "Clomic", 
+    "Davidress",
+    "Luxinshoes"
+    ]
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
+    "support@printpear.com",
+    "support@clomic.com",
     "support@davidress.com",
     "support@luxinshoes.com",
     # "support@onesimpler.com",
     # "support@xanawood.com",
     # "support@lovasuit.com",
 ]
-list_company_logo_URL = ["https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
-                         "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
-                        #  "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
-                        #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
-                        #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
-                         ]
+list_company_logo_URL = [
+    "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
+    "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
+    "https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
+    "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
+    #  "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
+    #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
+    #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
+]
 
 # ✅ Thiết lập thông tin API Gmail
 
 key_mail = {
+    "Printpear":{
+        "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
+    },
+    "Clomic":{
+        "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//04zdhfDR3-cxPCgYIARAAGAQSNwF-L9Ircg6brPWOsjjIad4e0inhVQ92bMlqjdpCnCnyNlfbormHMvuLoPCS2220sZyBlYlaDnE"
+    },
     "Davidress" : {
         "CLIENT_ID" : "815774674800-76rs0q4hr70ihac5e0bkojd4borr33q8.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
