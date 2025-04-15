@@ -29,6 +29,13 @@ WOOCOMMERCE_STORES = [
     #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
     # },
     {
+        "url": "https://clothguy.com/wp-json/wc/v3/orders",
+        "product_url": "https://clothguy.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
+        "consumer_secret": "cs_8c084ab759b120b119713233a9ae043afeebae62",
+        "sheet_id": "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0"
+    },
+    {
         "url": "https://printpear.com/wp-json/wc/v3/orders",
         "product_url": "https://printpear.com/wp-json/wc/v3/products/",    
         "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
