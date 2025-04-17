@@ -48,16 +48,16 @@ list_company_logo_URL = [
 # ✅ Thiết lập thông tin API Gmail
 
 key_mail = {
-    # "Printpear":{
-    #     "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
-    #     "CLIENT_SECRET" : "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",
-    #     "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
-    # },
-    # "Clomic":{
-    #     "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
-    #     "CLIENT_SECRET" : "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",
-    #     "REFRESH_TOKEN" : "1//04GtXX9V3tl1tCgYIARAAGAQSNwF-L9Ir1gzksRZIpGL4L-uq523k5k3t89WUi_OIxs_fwQaeqKd3DLRsUW58Yfz889UKJqm8jzo"
-    # },
+    "Printpear":{
+        "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
+    },
+    "Clomic":{
+        "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//04GtXX9V3tl1tCgYIARAAGAQSNwF-L9Ir1gzksRZIpGL4L-uq523k5k3t89WUi_OIxs_fwQaeqKd3DLRsUW58Yfz889UKJqm8jzo"
+    },
     "Davidress" : {
         "CLIENT_ID" : "815774674800-76rs0q4hr70ihac5e0bkojd4borr33q8.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
