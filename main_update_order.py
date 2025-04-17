@@ -42,13 +42,13 @@ WOOCOMMERCE_STORES = [
         "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
         "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
     },
-    {
-        "url": "https://cracksetup.com/wp-json/wc/v3/orders",
-        "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_161b3deffed9f0f1f319b774486b3a2a4ecf4d61",
-        "consumer_secret": "cs_ccb0ca4e2a9707635b9d64e33e4038b24b252c7d",
-        "sheet_id": "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw"
-    },
+    # {
+    #     "url": "https://cracksetup.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_161b3deffed9f0f1f319b774486b3a2a4ecf4d61",
+    #     "consumer_secret": "cs_ccb0ca4e2a9707635b9d64e33e4038b24b252c7d",
+    #     "sheet_id": "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw"
+    # },
     {
         "url": "https://clomic.com/wp-json/wc/v3/orders",
         "product_url": "https://clomic.com/wp-json/wc/v3/products/",    
@@ -87,7 +87,7 @@ SHEET_SOURCES = {
     },
     "merchfox": {
         "sheet_id": "13agKuW62InJ_Sdj0qA5SmiHJYjiPFqguUllLjr3CzM4",
-        "sheet_name": "JERSEY",
+        "sheet_name": "ORDER JERSEY",
         "order_id_col": 10,  # Cột E (Order ID)
         "checking_number_col": 1  # Cột B (Checking Number)
     },
@@ -103,6 +103,10 @@ SHEET_SOURCES = {
         "order_id_col": 4,  # Cột L (Order ID)
         "checking_number_col": 5  # Cột E (Checking Number)
     }
+}
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 }
 
 def fetch_checking_numbers():
@@ -178,7 +182,7 @@ def fetch_product_details(store, product_id,type_):
     product_url = f"{store['product_url']}{product_id}?consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}"
 
     try:
-        response = requests.get(product_url)
+        response = requests.get(product_url,headers=headers)
         if response.status_code == 200:
             product_data = response.json()
             product_permalink = product_data.get("permalink", "")
@@ -219,7 +223,7 @@ def fetch_orders(store):
 
     while True:
         response = requests.get(
-            f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}"
+            f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}",headers=headers
         )
         data = response.json()
         if not data or isinstance(data, dict) and "status" in data and data["status"] != 200:
