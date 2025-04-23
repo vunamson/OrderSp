@@ -29,6 +29,13 @@ WOOCOMMERCE_STORES = [
     #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
     # },
     {
+        "url": "https://lobreve.com/wp-json/wc/v3/orders",
+        "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_dfa0a1b6687f6c58ef7b3bb4fc2fcaba1f7e59c4",
+        "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
+        "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
+    },
+    {
         "url": "https://clothguy.com/wp-json/wc/v3/orders",
         "product_url": "https://clothguy.com/wp-json/wc/v3/products/",    
         "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
@@ -42,13 +49,13 @@ WOOCOMMERCE_STORES = [
         "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
         "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
     },
-    {
-        "url": "https://cracksetup.com/wp-json/wc/v3/orders",
-        "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_161b3deffed9f0f1f319b774486b3a2a4ecf4d61",
-        "consumer_secret": "cs_ccb0ca4e2a9707635b9d64e33e4038b24b252c7d",
-        "sheet_id": "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw"
-    },
+    # {
+    #     "url": "https://cracksetup.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_161b3deffed9f0f1f319b774486b3a2a4ecf4d61",
+    #     "consumer_secret": "cs_ccb0ca4e2a9707635b9d64e33e4038b24b252c7d",
+    #     "sheet_id": "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw"
+    # },
     {
         "url": "https://clomic.com/wp-json/wc/v3/orders",
         "product_url": "https://clomic.com/wp-json/wc/v3/products/",    
@@ -59,17 +66,17 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
         "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
-        "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
+        "consumer_key": "ck_e0fa63cdd1355cd58c1272c7bc943c20d870d9ff",
+        "consumer_secret": "cs_f86e4c108e412be6e0bad6a4c3783f6c034596b9",
         "sheet_id": "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
     },
-    {
-        "url": "https://davidress.com/wp-json/wc/v3/orders",
-        "product_url": "https://davidress.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
-        "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
-        "sheet_id": "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8"
-    }
+    # {
+    #     "url": "https://davidress.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://davidress.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
+    #     "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
+    #     "sheet_id": "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8"
+    # }
 ]
 
 SHEET_SOURCES = {
@@ -87,7 +94,7 @@ SHEET_SOURCES = {
     },
     "merchfox": {
         "sheet_id": "13agKuW62InJ_Sdj0qA5SmiHJYjiPFqguUllLjr3CzM4",
-        "sheet_name": "JERSEY",
+        "sheet_name": "ORDER JERSEY",
         "order_id_col": 10,  # Cột E (Order ID)
         "checking_number_col": 1  # Cột B (Checking Number)
     },
@@ -103,6 +110,10 @@ SHEET_SOURCES = {
         "order_id_col": 4,  # Cột L (Order ID)
         "checking_number_col": 5  # Cột E (Checking Number)
     }
+}
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
 }
 
 def fetch_checking_numbers():
@@ -178,7 +189,7 @@ def fetch_product_details(store, product_id,type_):
     product_url = f"{store['product_url']}{product_id}?consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}"
 
     try:
-        response = requests.get(product_url)
+        response = requests.get(product_url,headers=headers)
         if response.status_code == 200:
             product_data = response.json()
             product_permalink = product_data.get("permalink", "")
@@ -219,7 +230,7 @@ def fetch_orders(store):
 
     while True:
         response = requests.get(
-            f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}"
+            f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}",headers=headers
         )
         data = response.json()
         if not data or isinstance(data, dict) and "status" in data and data["status"] != 200:

@@ -1,5 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from gspread.utils import rowcol_to_a1
 
 class GoogleSheetHandler:
     def __init__(self, sheet_id):
@@ -85,14 +86,20 @@ class GoogleSheetHandler:
                 dest_number_checking = dest_order_map[order_id]["Number Checking"]
 
                 if number_checking != dest_number_checking:
-                    updated_rows.append({"row": dest_row_index, "value": number_checking})
+                    # updated_rows.append({"row": dest_row_index, "value": number_checking})
+                    cell_range = rowcol_to_a1(dest_row_index, 5)
+                    updated_rows.append({"range": cell_range, "values": [[number_checking]]})
             else:
                 # Nếu `Order ID` chưa có, thêm dòng mới vào Sheet2
                 new_rows.append([order_date, order_id, email, name, number_checking, "", order_status, pay_url, shipping_state])
 
         # ✅ Cập nhật các giá trị `Number Checking` bị thay đổi
-        for update in updated_rows:
-            sheet2.update_cell(update["row"], 5, update["value"])
+        if updated_rows:
+            sheet2.batch_update(updated_rows)
+            print(f"✅ Đã cập nhật {len(updated_rows)} ô 'Number Checking' bị thay đổi.")
+        # for update in updated_rows:
+        #     sheet2.batch_update(update["row"], 5, update["value"])
+        #     print(f"✅ Đã cập nhật {len(updated_rows)} ô 'Number Checking' bị thay đổi.")
 
         # ✅ Thêm các dòng mới vào `Sheet2`
         if new_rows:
