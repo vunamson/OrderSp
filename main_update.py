@@ -7,6 +7,8 @@ import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
 SHEET_IDS = [
+    "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0",
+    "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM",
     "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
     # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
     "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
@@ -18,6 +20,8 @@ SHEET_IDS = [
 ]
 
 nameStor = [
+    "Clothguy",
+    "Lobreve",
     "Printpear",
     # "Cracksetup",
     "Clomic", 
@@ -27,6 +31,8 @@ nameStor = [
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
+    "support@clothguy.com",
+    "support@lobreve.com",
     "support@printpear.com",
     "support@clomic.com",
     "support@davidress.com",
@@ -36,6 +42,8 @@ list_mail_support = [
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = [
+    "https://clothguy.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Create_a_modern_vibrant_logo_for_clothguycom_a_websit_3-removebg-preview.png",
+    "https://lobreve.com/wp-content/uploads/2025/03/Lobreve-removebg-preview.png",
     "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
     "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
     "https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
@@ -48,6 +56,16 @@ list_company_logo_URL = [
 # ✅ Thiết lập thông tin API Gmail
 
 key_mail = {
+    "Clothguy":{
+        "CLIENT_ID" : "636468432266-014v2lao9j86hfa1ssgv05nfkaeksi4t.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//04edlURvsEJKvCgYIARAAGAQSNwF-L9IrvBhKC7kP9HFeWWB44ZZdQPasKFCDlagXc5mA0_6QI2h1V-Ktg-PToGkrOQZ4oKS8qm4"
+    },
+    "Lobreve":{
+        "CLIENT_ID" : "417705534492-c8u3vh30tp37oav313k9ru72209dkvd5.apps.googleusercontent.com",
+        "CLIENT_SECRET" : "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",
+        "REFRESH_TOKEN" : "1//04SGNK28F11KKCgYIARAAGAQSNwF-L9IrcQrSG080Yd5UG2a94KHssbk8Sf2ieX4kVppNU0u-cUU5xZHD3orgdJHJlBhlLTKYLD0"
+    },
     "Printpear":{
         "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
@@ -56,7 +74,7 @@ key_mail = {
     "Clomic":{
         "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04zdhfDR3-cxPCgYIARAAGAQSNwF-L9Ircg6brPWOsjjIad4e0inhVQ92bMlqjdpCnCnyNlfbormHMvuLoPCS2220sZyBlYlaDnE"
+        "REFRESH_TOKEN" : "1//04GtXX9V3tl1tCgYIARAAGAQSNwF-L9Ir1gzksRZIpGL4L-uq523k5k3t89WUi_OIxs_fwQaeqKd3DLRsUW58Yfz889UKJqm8jzo"
     },
     "Davidress" : {
         "CLIENT_ID" : "815774674800-76rs0q4hr70ihac5e0bkojd4borr33q8.apps.googleusercontent.com",
@@ -82,6 +100,7 @@ key_mail = {
 # CLIENT_ID = "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com"
 # CLIENT_SECRET = "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"
 # REFRESH_TOKEN = "1//04E-tOajsSHlKCgYIARAAGAQSNwF-L9IrnIaaQl5ezgqjEbd2mRpueH7bfESoQcZJx8oYU_67cscyMVhPkBudJjW6PRlWEQbf7ns"
+
 
 
 # ✅ Khởi tạo lớp gửi email

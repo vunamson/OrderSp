@@ -18,18 +18,30 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
-    # "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc": {
-    #     "url": "https://printpear.com/",
-    #     "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
-    #     "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
-    #     "type_date": "Etc/GMT+0"
-    # },
-    # "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw": {
-    #     "url": "https://clomic.com/",
-    #     "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
-    #     "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
-    #     "type_date": "Etc/GMT+0"
-    # },
+    "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0": {
+        "url": "https://clothguy.com/",
+        "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
+        "consumer_secret": "cs_8c084ab759b120b119713233a9ae043afeebae62",
+        "type_date": "Etc/GMT+0"
+    },
+    "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM": {
+        "url": "https://lobreve.com/",
+        "consumer_key": "ck_dfa0a1b6687f6c58ef7b3bb4fc2fcaba1f7e59c4",
+        "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
+        "type_date": "Etc/GMT+0"
+    },
+    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc": {
+        "url": "https://printpear.com/",
+        "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
+        "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
+        "type_date": "Etc/GMT+0"
+    },
+    "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw": {
+        "url": "https://clomic.com/",
+        "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
+        "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
+        "type_date": "Etc/GMT+0"
+    },
     "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
         "url": "https://davidress.com/",
         "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
@@ -38,8 +50,8 @@ SHEET_AND_STORES = {
     },
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA": {
         "url": "https://luxinshoes.com/",
-        "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
-        "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
+        "consumer_key": "ck_e0fa63cdd1355cd58c1272c7bc943c20d870d9ff",
+        "consumer_secret": "cs_f86e4c108e412be6e0bad6a4c3783f6c034596b9",
         "type_date": "Etc/GMT+4"
     },
     # Thêm các store khác nếu có

@@ -29,6 +29,13 @@ WOOCOMMERCE_STORES = [
     #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
     # },
     {
+        "url": "https://lobreve.com/wp-json/wc/v3/orders",
+        "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_dfa0a1b6687f6c58ef7b3bb4fc2fcaba1f7e59c4",
+        "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
+        "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
+    },
+    {
         "url": "https://clothguy.com/wp-json/wc/v3/orders",
         "product_url": "https://clothguy.com/wp-json/wc/v3/products/",    
         "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
@@ -59,17 +66,17 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
         "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_762adb5c45a88080ded28b5259e971f2274bc586",
-        "consumer_secret": "cs_21df6fc65867df61725e29743f4bd6260f28d2af",
+        "consumer_key": "ck_e0fa63cdd1355cd58c1272c7bc943c20d870d9ff",
+        "consumer_secret": "cs_f86e4c108e412be6e0bad6a4c3783f6c034596b9",
         "sheet_id": "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
     },
-    {
-        "url": "https://davidress.com/wp-json/wc/v3/orders",
-        "product_url": "https://davidress.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
-        "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
-        "sheet_id": "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8"
-    }
+    # {
+    #     "url": "https://davidress.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://davidress.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
+    #     "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
+    #     "sheet_id": "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8"
+    # }
 ]
 
 SHEET_SOURCES = {
