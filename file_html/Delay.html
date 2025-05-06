@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update on Your Order – Slight Delay &amp; 15% Off</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background-color: #0071ce;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .header img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .content {
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .content p {
+      margin: 0 0 15px;
+    }
+    .footer {
+      background-color: #f4f4f4;
+      color: #888888;
+      font-size: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#f4f4f4">
+    <tr>
+      <td align="center">
+        <!-- Container -->
+        <table class="container" border="0" cellspacing="0" cellpadding="0">
+          <!-- Header -->
+          <tr>
+            <td class="header">
+              <img src="{company_logo_URL}" alt="{store_name} Logo">
+              <h1>Update on Your Order</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <p>Dear {customer_name},</p>
+              <p>Thank you for choosing <strong>{store_name}</strong>! We wanted to let you know that your order will ship approximately <strong>three days later</strong> than originally anticipated.</p>
+              <p>This short delay is due to an <strong>enhanced quality inspection step</strong> we’ve recently introduced—an extra measure we’ve added to ensure each item meets our highest standards for color vibrancy and durability. We apologize for any inconvenience and appreciate your understanding as we take this time to deliver the very best to you.</p>
+              <p>As a token of our gratitude for your patience, please enjoy <strong>15% off</strong> your next purchase with the code <strong>THANKYOU15</strong> at checkout.</p>
+              <p>If you have any questions or need assistance, simply reply to this email or reach out to our support team at <a href="mailto:{email_supports}" style="color:#0071ce; text-decoration:underline;">{email_supports}</a>.</p>
+              <p>Thank you again for your understanding and for being a valued customer.</p>
+              <p>Best regards,<br>
+                 {store_name} Customer Support Team<br>
+                 <a href="mailto:{email_supports}" style="color:#0071ce; text-decoration:underline;">{email_supports}</a><br>
+                 Phone: +1 (252) 590-0013
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td class="footer">
+              <p>&copy; {current_year} {store_name}. All rights reserved.</p>
+            </td>
+          </tr>
+        </table>
+        <!-- End Container -->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

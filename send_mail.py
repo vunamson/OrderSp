@@ -206,6 +206,9 @@ class EmailSender:
             "LoiOrder" : {
                 "url_mail": r"C:\17track\file_html\LoiOrder.html"
             },
+            "Delay" : {
+                "url_mail": r"C:\17track\file_html\Delay.html"
+            },
         }
 
         if status in email_templates:

@@ -42,16 +42,16 @@ SHEET_AND_STORES = {
         "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
         "type_date": "Etc/GMT+0"
     },
-    "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8": {
+    "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0": {
         "url": "https://davidress.com/",
-        "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
-        "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
+        "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
+        "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
         "type_date": "Etc/GMT+5"
     },
-    "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA": {
+    "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo": {
         "url": "https://luxinshoes.com/",
-        "consumer_key": "ck_e0fa63cdd1355cd58c1272c7bc943c20d870d9ff",
-        "consumer_secret": "cs_f86e4c108e412be6e0bad6a4c3783f6c034596b9",
+        "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
+        "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
         "type_date": "Etc/GMT+4"
     },
     # Thêm các store khác nếu có

@@ -12,8 +12,8 @@ SHEET_IDS = [
     "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
     # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
     "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
-    "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
-    "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA",
+    "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0",
+    "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo",
     # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
     # "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
