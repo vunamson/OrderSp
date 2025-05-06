@@ -2,18 +2,18 @@ from datetime import datetime, timedelta
 from google_sheets import GoogleSheetHandler
 from checking_number import Track17Selenium
 from send_mail import EmailSender
-from check_date_email import check_date
+from check_date_email import check_date_email, check_date_email_failed,check_date
 import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
 SHEET_IDS = [
     "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0",
-    "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM",
-    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
+    # "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM",
+    # "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
     # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
     "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
     "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0",
-    "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo",
+    # "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo",
     # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
     # "1CmmjO1NVG8hRe6YaurCHT4Co3GhSw39ABIwwTcv4sHw"
     # "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
@@ -21,33 +21,33 @@ SHEET_IDS = [
 
 nameStor = [
     "Clothguy",
-    "Lobreve",
-    "Printpear",
+    # "Lobreve",
+    # "Printpear",
     # "Cracksetup",
     "Clomic", 
     "Davidress",
-    "Luxinshoes"
+    # "Luxinshoes"
     ]
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
     "support@clothguy.com",
-    "support@lobreve.com",
-    "support@printpear.com",
+    # "support@lobreve.com",
+    # "support@printpear.com",
     "support@clomic.com",
     "support@davidress.com",
-    "support@luxinshoes.com",
+    # "support@luxinshoes.com",
     # "support@onesimpler.com",
     # "support@xanawood.com",
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = [
     "https://clothguy.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Create_a_modern_vibrant_logo_for_clothguycom_a_websit_3-removebg-preview.png",
-    "https://lobreve.com/wp-content/uploads/2025/03/Lobreve-removebg-preview.png",
-    "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
+    # "https://lobreve.com/wp-content/uploads/2025/03/Lobreve-removebg-preview.png",
+    # "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
     "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
     "https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
-    "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
+    # "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
     #  "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
     #  "https://trumpany.nyc3.digitaloceanspaces.com/xanawood.com/2025/02/24025646/Logo-Xanawood.png",
     #  "https://trumpany.nyc3.digitaloceanspaces.com/lovasuit.com/2025/02/28222122/Favicon.png"                         
@@ -61,16 +61,16 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//04u19kzr3sH3TCgYIARAAGAQSNwF-L9IrnX-KddJkZXN4VgKBV9p1RM1R-Ai6L7ILx0svx0V28YqBxnw5iNDpI0TxdU5uJc8JN_c"
     },
-    "Lobreve":{
-        "CLIENT_ID" : "417705534492-c8u3vh30tp37oav313k9ru72209dkvd5.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04SGNK28F11KKCgYIARAAGAQSNwF-L9IrcQrSG080Yd5UG2a94KHssbk8Sf2ieX4kVppNU0u-cUU5xZHD3orgdJHJlBhlLTKYLD0"
-    },
-    "Printpear":{
-        "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
-    },
+    # "Lobreve":{
+    #     "CLIENT_ID" : "417705534492-c8u3vh30tp37oav313k9ru72209dkvd5.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04SGNK28F11KKCgYIARAAGAQSNwF-L9IrcQrSG080Yd5UG2a94KHssbk8Sf2ieX4kVppNU0u-cUU5xZHD3orgdJHJlBhlLTKYLD0"
+    # },
+    # "Printpear":{
+    #     "CLIENT_ID" : "791584904106-p863n6duo8drgtb7f5sam2msu234pqke.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
+    # },
     "Clomic":{
         "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
@@ -81,11 +81,11 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//04l2PRnjxiWP1CgYIARAAGAQSNwF-L9IrSyYKloXSLIDXPDmKg0AEyExfWHshUGvOuRPtdizbUSBxaDxUke7nQG6xRxXGO3PUgiY"
     },
-    "Luxinshoes" : {
-        "CLIENT_ID" : "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04E-tOajsSHlKCgYIARAAGAQSNwF-L9IrnIaaQl5ezgqjEbd2mRpueH7bfESoQcZJx8oYU_67cscyMVhPkBudJjW6PRlWEQbf7ns"
-    },
+    # "Luxinshoes" : {
+    #     "CLIENT_ID" : "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04E-tOajsSHlKCgYIARAAGAQSNwF-L9IrnIaaQl5ezgqjEbd2mRpueH7bfESoQcZJx8oYU_67cscyMVhPkBudJjW6PRlWEQbf7ns"
+    # },
     # "Onesimpler" : {
     #     "CLIENT_ID" : "802842070292-fdpnac2kp98gcpjb5tspphjbb5obsvr6.apps.googleusercontent.com",
     #     "CLIENT_SECRET" : "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",
@@ -100,7 +100,6 @@ key_mail = {
 # CLIENT_ID = "21574557297-0nhvrl2k8rof50q7fmu4amoleii97sh4.apps.googleusercontent.com"
 # CLIENT_SECRET = "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"
 # REFRESH_TOKEN = "1//04E-tOajsSHlKCgYIARAAGAQSNwF-L9IrnIaaQl5ezgqjEbd2mRpueH7bfESoQcZJx8oYU_67cscyMVhPkBudJjW6PRlWEQbf7ns"
-
 
 
 # ✅ Khởi tạo lớp gửi email
@@ -135,6 +134,7 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
     # ✅ B1: Cập nhật và sắp xếp lại Sheet2
     google_sheets = GoogleSheetHandler(sheet_id)
     print("🔄 Đang cập nhật Sheet2...")
+    google_sheets.update_sheet2()
 
     # ✅ B2: Lấy dữ liệu từ Sheet2
     print("🔍 Lấy dữ liệu từ Sheet2...")
@@ -162,52 +162,24 @@ for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
         shipping_state = row[8]
         date_status_order = row[11] if row_length > 11 else ""
 
-        # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL
-        row_12 =  row[12] if row_length > 12 else ""
-        if tracking_number and (not row[9] or not row_12) :
-            tracker = Track17Selenium(tracking_number)
-            new_status = tracker.track()
-            print('new_status' , new_status)
-            if("Info received" in new_status) : new_status = "InfoReceived"
-            elif "In transit" in new_status or new_status =="Depart from port" or new_status=="Arrived at port" : new_status = "InTransit"
-            elif("Pick up" in new_status) : new_status = "PickUp"
-            elif("Out for delivery" in new_status) : new_status = "OutForDelivery"
-            elif("Undelivered" in new_status or new_status == "Delivery Exception") : new_status = "Undelivered"
-            elif("Delivered" in new_status) : new_status = "Delivered"
-            elif("Alert" in new_status or new_status =="Package Exception") : new_status = "Alert"
-            elif("Expired" in new_status) : new_status = "Expired"
-            else: new_status=""
+        # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL và không mua lại sản phẩm
+        if order_status == "failed" :
+            pass
 
-            print('new_status2' , new_status)
-            # ✅ Nếu trạng thái thay đổi -> Cập nhật vào Sheet & Gửi email
-            status_order_false = ['Alert','Undelivered','Expired']
-            if new_status and new_status != current_status:
-                google_sheets.update_cell(i, 6, new_status)  # Cập nhật cột F
-                email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-                google_sheets.update_cell(i, 10, new_status)  # Cập nhật cột J
-                request_count += 2
-                if new_status not in status_order_false :
-                    formatted_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
-                    google_sheets.update_cell(i, 12, formatted_datetime)
-                    google_sheets.update_cell(i, 13, '')
-                    request_count += 2
-                else : # Nếu order status bị lỗi gửi mail cho chính mình 
-                    email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "LoiOrder", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-                    google_sheets.update_cell(i, 13, "Loi " + new_status)
-                    request_count +=1
-            else:
-                status_order_true = ['InfoReceived', 'InTransit','PickUp','OutForDelivery']
-                # sau 10 ngày và 13 ngày chưa chuyển trạng thái gửi mail cho chính mình 
-                if date_status_order and new_status : 
-                    day_status = check_date(date_status_order)
-                    if new_status in status_order_true and day_status == 10 :
-                        email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder10Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-                        google_sheets.update_cell(i, 13, "ngày 10 chưa chuyển trạng thái ")
-                        request_count += 1
-                    elif new_status in status_order_true and day_status == 13 :
-                        email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder13Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-                        google_sheets.update_cell(i, 13, "ngày 13 chưa chuyển trạng thái ")
-                        request_count += 1
+        else: #Nếu đơn hàng không failed 
+            if not check_order_id_no_status(sheet2_data, i, current_status): # Không có đơn hàng nào đằng trước cùng ID và cũng chưa có status
+                try:
+                    order_dt = datetime.fromisoformat(order_date)
+                    if order_dt.month != 4 or order_dt.day not in [28, 29, 30]:
+                        continue  # Bỏ qua đơn không nằm trong ngày 28, 29, 30 tháng 4
+                    else : 
+                        email_sender.email_check(list_mail_support[index],email, customer_name, "", "Delay", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
+                except Exception as e:
+                    print(f"❌ Lỗi khi xử lý ngày '{order_date}' tại dòng {i}: {e}")
+                    continue
+
+                
+
         # ✅ Nghỉ giữa các lần chạy để tránh bị Google chặn
         if i % 20 == 0:
             print("🛑 Nghỉ 10 giây để tránh bị chặn...")

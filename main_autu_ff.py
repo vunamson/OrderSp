@@ -6,7 +6,7 @@ JERSEY_SHEET_ID = "13agKuW62InJ_Sdj0qA5SmiHJYjiPFqguUllLjr3CzM4"
 
 # Các Sheet cần kiểm tra
 SHEET_IDS = [
-    "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8",
+    "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0",
     "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
 ]
 

@@ -66,17 +66,17 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
         "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_e0fa63cdd1355cd58c1272c7bc943c20d870d9ff",
-        "consumer_secret": "cs_f86e4c108e412be6e0bad6a4c3783f6c034596b9",
-        "sheet_id": "1cGF0JBFX1dkTq_56-23IblzLKpdqgVkPxNb-ZX5-sQA"
+        "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
+        "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
+        "sheet_id": "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo"
     },
-    # {
-    #     "url": "https://davidress.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://davidress.com/wp-json/wc/v3/products/",
-    #     "consumer_key": "ck_140a74832b999d10f1f5b7b6f97ae8ddc25e835a",
-    #     "consumer_secret": "cs_d290713d3e1199c51a22dc1e85707bb24bcce769",
-    #     "sheet_id": "1iU5kAhVSC0pIP2szucrTm4PaplUh501H2oUvLgx0mw8"
-    # }
+    {
+        "url": "https://davidress.com/wp-json/wc/v3/orders",
+        "product_url": "https://davidress.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
+        "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
+        "sheet_id": "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0"
+    }
 ]
 
 SHEET_SOURCES = {
