@@ -11,7 +11,7 @@ SHEET_IDS = [
     "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM",
     "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
     # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
-    "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
+    # "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
     "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0",
     "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo",
     # "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM",
@@ -24,7 +24,7 @@ nameStor = [
     "Lobreve",
     "Printpear",
     # "Cracksetup",
-    "Clomic", 
+    # "Clomic", 
     "Davidress",
     "Luxinshoes"
     ]
@@ -34,7 +34,7 @@ list_mail_support = [
     "support@clothguy.com",
     "support@lobreve.com",
     "support@printpear.com",
-    "support@clomic.com",
+    # "support@clomic.com",
     "support@davidress.com",
     "support@luxinshoes.com",
     # "support@onesimpler.com",
@@ -45,7 +45,7 @@ list_company_logo_URL = [
     "https://clothguy.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Create_a_modern_vibrant_logo_for_clothguycom_a_websit_3-removebg-preview.png",
     "https://lobreve.com/wp-content/uploads/2025/03/Lobreve-removebg-preview.png",
     "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
-    "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
+    # "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
     "https://trumpany.nyc3.digitaloceanspaces.com/davidress/2024/12/12080637/DaviDress_Logo-1.png",
     "https://trumpany.nyc3.digitaloceanspaces.com/luxinshoes/2024/12/12151154/Luxinshoes_logo.png",
     #  "https://onesimpler.com/wp-content/uploads/2025/01/Chua-co-ten-2000-x-1000-px-1.png",
@@ -71,11 +71,11 @@ key_mail = {
         "CLIENT_SECRET" : "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",
         "REFRESH_TOKEN" : "1//040Ve4VLX-VcZCgYIARAAGAQSNwF-L9IrImKEuI6gLrOOtHpEwOeCZDdDFyib1KnKITktIqq0Rt6uEPRb1lsREEl8wuJiIje5jZU"
     },
-    "Clomic":{
-        "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04GtXX9V3tl1tCgYIARAAGAQSNwF-L9Ir1gzksRZIpGL4L-uq523k5k3t89WUi_OIxs_fwQaeqKd3DLRsUW58Yfz889UKJqm8jzo"
-    },
+    # "Clomic":{
+    #     "CLIENT_ID" : "208673125837-6rdum7k9fofeoka7u05tmbobivp9a3d2.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04GtXX9V3tl1tCgYIARAAGAQSNwF-L9Ir1gzksRZIpGL4L-uq523k5k3t89WUi_OIxs_fwQaeqKd3DLRsUW58Yfz889UKJqm8jzo"
+    # },
     "Davidress" : {
         "CLIENT_ID" : "815774674800-76rs0q4hr70ihac5e0bkojd4borr33q8.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",

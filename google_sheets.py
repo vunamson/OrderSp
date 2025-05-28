@@ -1,5 +1,6 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 from gspread.utils import rowcol_to_a1
 
 class GoogleSheetHandler:
@@ -12,7 +13,7 @@ class GoogleSheetHandler:
     def authenticate_google_sheets(self):
         """Xác thực Google Sheets API"""
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+        creds = ServiceAccountCredentials.from_json_keyfile_name(r"C:\17track\credentials.json", scope)
         return gspread.authorize(creds)
 
     def get_sheets(self):
@@ -107,7 +108,7 @@ class GoogleSheetHandler:
             print(f"✅ Đã thêm {len(new_rows)} đơn hàng mới vào Sheet2.")
 
         # ✅ Sắp xếp lại Sheet2 theo `Order Date`
-        self.sort_sheet(sheet2,  1)
+        self.sort_sheet(sheet2,  0)
 
         num_rows = len(data2)  # Số hàng hiện tại trong Sheet2
         if num_rows > 1:  # Chỉ xóa nếu có dữ liệu
@@ -116,22 +117,60 @@ class GoogleSheetHandler:
 
             print(f"✅ Đã xóa tất cả dữ liệu trong cột J của Sheet2.")
 
+    # def sort_sheet(self, sheet, sort_col):
+    #     data = sheet.get_all_values()
+    #     headers = data[0]
+
+    #     # ✅ Chuyển đổi Order ID thành số (nếu có thể)
+    #     def parse_number(value):
+    #         try:
+    #             return int(value.replace(",", ""))  # Loại bỏ dấu phẩy và chuyển thành số
+    #         except ValueError:
+    #             return 0  # Nếu không thể chuyển đổi, đưa về 0 để xếp cuối
+
+    #     # ✅ Sắp xếp theo Order ID (cột B)
+    #     sorted_data = sorted(data[1:], key=lambda x: parse_number(x[sort_col]), reverse=True)
+
+    #     # ✅ Xóa dữ liệu cũ và cập nhật dữ liệu mới
+    #     sheet.clear()
+    #     sheet.append_rows([headers] + sorted_data)
     def sort_sheet(self, sheet, sort_col):
+        """
+        Sắp xếp Google Sheet theo cột chứa ngày tháng (format: YYYY-MM-DD HH:MM:SS).
+        
+        :param sheet: Google Sheet cần sắp xếp.
+        :param sort_col: Chỉ mục của cột cần sắp xếp (A = 0, B = 1, ...)
+        """
         data = sheet.get_all_values()
         headers = data[0]
 
-        # ✅ Chuyển đổi Order ID thành số (nếu có thể)
-        def parse_number(value):
+        # ✅ Chuyển đổi giá trị ngày tháng thành `datetime`
+        def parse_date(value):
             try:
-                return int(value.replace(",", ""))  # Loại bỏ dấu phẩy và chuyển thành số
-            except ValueError:
-                return 0  # Nếu không thể chuyển đổi, đưa về 0 để xếp cuối
+        # Nếu dùng khoảng trắng thay vì 'T'
+                if " " in value:
+                    value = value.replace(" ", "T")
+                # Nếu giờ < 10 mà không có 0, thì chuẩn hóa lại giờ phút giây thành 2 chữ số
+                date_part, time_part = value.split("T")
+                time_parts = time_part.split(":")
+                if len(time_parts[0]) == 1:
+                    time_parts[0] = time_parts[0].zfill(2)  # Thêm số 0 trước giờ nếu cần
+                if len(time_parts[1]) == 1:
+                    time_parts[1] = time_parts[1].zfill(2)
+                if len(time_parts[2]) == 1:
+                    time_parts[2] = time_parts[2].zfill(2)
+                value = f"{date_part}T{':'.join(time_parts)}"
+                return datetime.fromisoformat(value)
+            except Exception:
+                return datetime.min
 
-        # ✅ Sắp xếp theo Order ID (cột B)
-        sorted_data = sorted(data[1:], key=lambda x: parse_number(x[sort_col]), reverse=True)
+        # ✅ Sắp xếp dữ liệu theo ngày (mới nhất -> cũ nhất)
+        sorted_data = sorted(data[1:], key=lambda x: parse_date(x[sort_col]), reverse=True)
 
         # ✅ Xóa dữ liệu cũ và cập nhật dữ liệu mới
         sheet.clear()
         sheet.append_rows([headers] + sorted_data)
+        
+        print(f"✅ Đã sắp xếp Sheet theo cột {headers[sort_col]} (Ngày mới nhất -> cũ nhất).")
 
 
