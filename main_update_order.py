@@ -21,19 +21,26 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
     # },
+    {
+        "url": "https://lovasuit.com/wp-json/wc/v3/orders",
+        "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
+        "consumer_secret": "cs_9265f5db3482e3210fef476cdd85944c1d05f830",
+        "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
+    },
     # {
-    #     "url": "https://lovasuit.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
-    #     "consumer_key": "ck_30eaceb240581910ea9a679053ea7801485cd634",
-    #     "consumer_secret": "cs_71f70cbb54b1cf5566867635165fa783482c6919",
-    #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
+    #     "url": "https://lobreve.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_dfa0a1b6687f6c58ef7b3bb4fc2fcaba1f7e59c4",
+    #     "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
+    #     "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
     # },
     {
-        "url": "https://lobreve.com/wp-json/wc/v3/orders",
-        "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_dfa0a1b6687f6c58ef7b3bb4fc2fcaba1f7e59c4",
-        "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
-        "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
+        "url": "https://noaweather.com/wp-json/wc/v3/orders",
+        "product_url": "https://noaweather.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_3c4184984f798639b393c9a610a4ca1910013640",
+        "consumer_secret": "cs_4c93f7bb12b043b87c7af9685367e73dbfde044d",
+        "sheet_id": "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo"
     },
     {
         "url": "https://clothguy.com/wp-json/wc/v3/orders",
@@ -45,8 +52,8 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://printpear.com/wp-json/wc/v3/orders",
         "product_url": "https://printpear.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_a278fd4d4402c9e094c89a87102bbc85b33360a5",
-        "consumer_secret": "cs_cb6cdb01d144bd9cced7a8c2061c980cf491c084",
+        "consumer_key": "ck_be16945fe0444e5e6c9e928f8be6e48e169c8dd3",
+        "consumer_secret": "cs_75c0c0fcbcdb7a2975614b1abaa9b35ebe96b1f4",
         "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
     },
     # {
@@ -59,8 +66,8 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://clomic.com/wp-json/wc/v3/orders",
         "product_url": "https://clomic.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_094b18d1bbccb1eb52ce05113a8cce6ffdc2cc06",
-        "consumer_secret": "cs_62fe11d4e10536c4bd772308bfff08d40fd00e2b",
+        "consumer_key": "ck_6650e61b14dcf29b5f8f213d5c2aa83f011582e6",
+        "consumer_secret": "cs_6615d190132269f17595881a7dc23ee03d638732",
         "sheet_id": "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw"
     },
     {
@@ -337,7 +344,7 @@ def process_orders(orders, existing_orders,store, checking_maps):
                 # gender = gender if gender in valid_genders else ""
 
                 type_ = extract_metadata_value(item["meta_data"], ["Type", "TYPE:", "Style:", "Stype", "STYPE","pa_style","STYPE:"])
-                type_ = clean_value(type_)
+                # type_ = clean_value(type_)
                 # type_ = "" if type_ in valid_genders else type_
                 product_url, list_link_image, sku_workshop, factory = fetch_product_details(store, product_id ,type_)
 
@@ -414,7 +421,7 @@ def update_google_sheets(google_sheets, new_orders, updated_orders):
     print(f"✅ Đã cập nhật {len(updated_orders)} đơn hàng")
 
     # 🌟 Sắp xếp lại Sheet1 theo Order Date
-    google_sheets.sort_sheet(sheet1, 1)
+    google_sheets.sort_sheet(sheet1, 0)
 
     print("✅ Đã sắp xếp lại Sheet1 theo Order Date")
     # 🌟 Tô màu cột Order Status
