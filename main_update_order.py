@@ -7,6 +7,27 @@ from gspread_formatting import (
     CellFormat, Color
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
+    {
+        "url": "https://magliba.com/wp-json/wc/v3/orders",
+        "product_url": "https://magliba.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_2a63890f1a5611614092b2fc91d649e2036e1cb9",
+        "consumer_secret": "cs_7905a4198dad956d0800f0eb4599bdafe89791da",
+        "sheet_id": "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY"
+    },
+    {
+        "url": "https://bokocoko.com/wp-json/wc/v3/orders",
+        "product_url": "https://bokocoko.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_bfb542470a2eb1d0e09a0e1f0563591573831659",
+        "consumer_secret": "cs_7736be3c0e12895cefc49e334cfd0a6e0e7ebfe2",
+        "sheet_id": "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo"
+    },
+    {
+        "url": "https://drupid.com/wp-json/wc/v3/orders",
+        "product_url": "https://drupid.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
+        "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
+        "sheet_id": "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY"
+    },
     # {
     #     "url": "https://craftedpod.com/wp-json/wc/v3/orders",
     #     "product_url": "https://craftedpod.com/wp-json/wc/v3/products/",    
@@ -21,13 +42,13 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
     # },
-    {
-        "url": "https://lovasuit.com/wp-json/wc/v3/orders",
-        "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
-        "consumer_secret": "cs_9265f5db3482e3210fef476cdd85944c1d05f830",
-        "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
-    },
+    # {
+    #     "url": "https://lovasuit.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
+    #     "consumer_secret": "cs_9265f5db3482e3210fef476cdd85944c1d05f830",
+    #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
+    # },
     # {
     #     "url": "https://lobreve.com/wp-json/wc/v3/orders",
     #     "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
@@ -116,6 +137,18 @@ SHEET_SOURCES = {
         "sheet_name": "3D(BY SELLER)",
         "order_id_col": 4,  # Cột L (Order ID)
         "checking_number_col": 5  # Cột E (Checking Number)
+    },
+    "hog-t6-3d":{
+        "sheet_id": "1jDZbTZzUG-_Sw3NXgKMjRa5YD9V3PjMkLlx78-w688Y",
+        "sheet_name": "THÁNG 6-BY SELLER",
+        "order_id_col": 4,  # Cột L (Order ID)
+        "checking_number_col": 5  # Cột E (Checking Number)
+    },
+    "hog-t6-2d":{
+        "sheet_id": "1jDZbTZzUG-_Sw3NXgKMjRa5YD9V3PjMkLlx78-w688Y",
+        "sheet_name": "THÁNG 6-2D",
+        "order_id_col": 4,  # Cột L (Order ID)
+        "checking_number_col": 5  # Cột E (Checking Number)
     }
 }
 
@@ -132,7 +165,9 @@ def fetch_checking_numbers():
         "cn": {},
         "merchfox": {},
         "webbb": {},
-        "hog" : {}
+        "hog" : {},
+        "hog-t6-3d":{},
+        "hog-t6-2d": {}
     }
 
     for source_name, source in SHEET_SOURCES.items():
@@ -254,11 +289,13 @@ def extract_metadata_value(meta_data, keys, default=""):
     - keys: Danh sách các key cần tìm.
     - default: Giá trị mặc định nếu không tìm thấy.
     """
+    value = ""
     for item in meta_data:
         if any(item["key"].strip().lower() == key.strip().lower() for key in keys):
-            value = item.get("value", "").strip().replace(":", "").replace("|", "")
-            return value if value else default
-    return default
+            value_data = item.get("value", "").strip().replace(":", "").replace("|", "")
+            if value_data : 
+                value +=" - " +  value_data if value else value_data
+    return value
 
 
 # 🌟 Xử lý dữ liệu đơn hàng
@@ -302,6 +339,10 @@ def process_orders(orders, existing_orders,store, checking_maps):
             checking_number = checking_maps["webbb"][order_id]
         elif order_id in checking_maps["hog"]:
             checking_number = checking_maps["hog"][order_id]
+        elif order_id in checking_maps["hog-t6-3d"]:
+            checking_number = checking_maps["hog-t6-3d"][order_id]
+        elif order_id in checking_maps["hog-t6-2d"]:
+            checking_number = checking_maps["hog-t6-2d"][order_id]
 
 
 
