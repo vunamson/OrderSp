@@ -18,6 +18,24 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
+    "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY": {
+        "url": "https://magliba.com/",
+        "consumer_key": "ck_2a63890f1a5611614092b2fc91d649e2036e1cb9",
+        "consumer_secret": "cs_7905a4198dad956d0800f0eb4599bdafe89791da",
+        "type_date": "Etc/GMT+0"
+    },
+    "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo": {
+        "url": "https://bokocoko.com/",
+        "consumer_key": "ck_bfb542470a2eb1d0e09a0e1f0563591573831659",
+        "consumer_secret": "cs_7736be3c0e12895cefc49e334cfd0a6e0e7ebfe2",
+        "type_date": "Etc/GMT+0"
+    },
+    "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY": {
+        "url": "https://drupid.com/",
+        "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
+        "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
+        "type_date": "Etc/GMT+0"
+    },
     "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8": {
         "url": "https://lovasuit.com/",
         "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
@@ -54,18 +72,18 @@ SHEET_AND_STORES = {
         "consumer_secret": "cs_6615d190132269f17595881a7dc23ee03d638732",
         "type_date": "Etc/GMT+0"
     },
-    "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0": {
-        "url": "https://davidress.com/",
-        "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
-        "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
-        "type_date": "Etc/GMT+5"
-    },
-    "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo": {
-        "url": "https://luxinshoes.com/",
-        "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
-        "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
-        "type_date": "Etc/GMT+4"
-    },
+    # "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0": {
+    #     "url": "https://davidress.com/",
+    #     "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
+    #     "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
+    #     "type_date": "Etc/GMT+5"
+    # },
+    # "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo": {
+    #     "url": "https://luxinshoes.com/",
+    #     "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
+    #     "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
+    #     "type_date": "Etc/GMT+4"
+    # },
     # Thêm các store khác nếu có
 }
 
