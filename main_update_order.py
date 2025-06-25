@@ -1,5 +1,6 @@
 import time
 import requests
+import sys
 from google_sheets import GoogleSheetHandler  # Import class xử lý Google Sheets
 import gspread
 from gspread_formatting import (
@@ -7,6 +8,13 @@ from gspread_formatting import (
     CellFormat, Color
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
+     {
+        "url": "https://gardenleap.com/wp-json/wc/v3/orders",
+        "product_url": "https://gardenleap.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_258fbfb50bbc34ae9cc49b561276f6b3410b24f3",
+        "consumer_secret": "cs_88a428e2c8696a62e12ea3f3136f1f51e6136fd8",
+        "sheet_id": "1UiOMmQPkMmq0tewpiCsmyrXx7qMwW6iE21GjqzHVO7c"
+    },
     {
         "url": "https://magliba.com/wp-json/wc/v3/orders",
         "product_url": "https://magliba.com/wp-json/wc/v3/products/",
@@ -17,17 +25,17 @@ WOOCOMMERCE_STORES = [
     {
         "url": "https://bokocoko.com/wp-json/wc/v3/orders",
         "product_url": "https://bokocoko.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_bfb542470a2eb1d0e09a0e1f0563591573831659",
-        "consumer_secret": "cs_7736be3c0e12895cefc49e334cfd0a6e0e7ebfe2",
+        "consumer_key": "ck_eddf9ccb7607fe7978e0fcbf27982e4d68ed84b0",
+        "consumer_secret": "cs_67c736aaf25e2e1488e266ad0167fdcf5372c759",
         "sheet_id": "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo"
     },
-    {
-        "url": "https://drupid.com/wp-json/wc/v3/orders",
-        "product_url": "https://drupid.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
-        "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
-        "sheet_id": "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY"
-    },
+    # {
+    #     "url": "https://drupid.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://drupid.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
+    #     "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
+    #     "sheet_id": "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY"
+    # },
     # {
     #     "url": "https://craftedpod.com/wp-json/wc/v3/orders",
     #     "product_url": "https://craftedpod.com/wp-json/wc/v3/products/",    
@@ -42,13 +50,13 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "sheet_id": "1j5VHpm1g3hlXK-HncynZNybubWLLmlsWt-rK5ws9UFM"
     # },
-    # {
-    #     "url": "https://lovasuit.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
-    #     "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
-    #     "consumer_secret": "cs_9265f5db3482e3210fef476cdd85944c1d05f830",
-    #     "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
-    # },
+    {
+        "url": "https://lovasuit.com/wp-json/wc/v3/orders",
+        "product_url": "https://lovasuit.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_046b35126ce3614180eb5bc5587f2efb44cf63e3",
+        "consumer_secret": "cs_cb4e461b985af43fcfd942171aedf9bdb0ebe877",
+        "sheet_id": "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8"
+    },
     # {
     #     "url": "https://lobreve.com/wp-json/wc/v3/orders",
     #     "product_url": "https://lobreve.com/wp-json/wc/v3/products/",    
@@ -56,18 +64,18 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
     #     "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
     # },
-    {
-        "url": "https://noaweather.com/wp-json/wc/v3/orders",
-        "product_url": "https://noaweather.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_3c4184984f798639b393c9a610a4ca1910013640",
-        "consumer_secret": "cs_4c93f7bb12b043b87c7af9685367e73dbfde044d",
-        "sheet_id": "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo"
-    },
+    # {
+    #     "url": "https://noaweather.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://noaweather.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_3c4184984f798639b393c9a610a4ca1910013640",
+    #     "consumer_secret": "cs_4c93f7bb12b043b87c7af9685367e73dbfde044d",
+    #     "sheet_id": "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo"
+    # },
     {
         "url": "https://clothguy.com/wp-json/wc/v3/orders",
         "product_url": "https://clothguy.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
-        "consumer_secret": "cs_8c084ab759b120b119713233a9ae043afeebae62",
+        "consumer_key": "ck_34f1a62a35d0997de2a0fbf70572931989f10a24",
+        "consumer_secret": "cs_b27d9c0ab95737dd5e1c2028b8921d41889ffcb9",
         "sheet_id": "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0"
     },
     {
@@ -91,20 +99,20 @@ WOOCOMMERCE_STORES = [
         "consumer_secret": "cs_6615d190132269f17595881a7dc23ee03d638732",
         "sheet_id": "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw"
     },
-    {
-        "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
-        "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
-        "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
-        "sheet_id": "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo"
-    },
-    {
-        "url": "https://davidress.com/wp-json/wc/v3/orders",
-        "product_url": "https://davidress.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
-        "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
-        "sheet_id": "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0"
-    }
+    # {
+    #     "url": "https://luxinshoes.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://luxinshoes.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_a7554487cd3d9936118d4f908f9440d06f7c4f54",
+    #     "consumer_secret": "cs_f70a5ae3998e069213bf6bec69f04624a9ceeb6c",
+    #     "sheet_id": "11vRLaxloprMzBe8hwrASOLetiVWZGwjEKBU2p8s11zo"
+    # },
+    # {
+    #     "url": "https://davidress.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://davidress.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_e11910c906c2b454aa065e1a240e71a71013396a",
+    #     "consumer_secret": "cs_6565ae4a7da24853b88195eb0abd7754d26bc484",
+    #     "sheet_id": "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0"
+    # }
 ]
 
 SHEET_SOURCES = {
@@ -306,7 +314,7 @@ def clean_value(value):
     value = str(value).strip()
     return value.split()[0] if value else ""
 
-def process_orders(orders, existing_orders,store, checking_maps):
+def process_orders(title,orders, existing_orders,store, checking_maps):
     new_orders = []
     updated_orders = []
     
@@ -328,6 +336,9 @@ def process_orders(orders, existing_orders,store, checking_maps):
         pay_url = order.get("payment_url", "")
         shipping_total = order["shipping_total"]
 
+        order_id_title = f"{title}{order_id}"
+        if order_id_title in existing_orders:
+            order_id = order_id_title
         checking_number = ""
         if order_id in checking_maps["shoes"]:
             checking_number = checking_maps["shoes"][order_id]
@@ -390,7 +401,7 @@ def process_orders(orders, existing_orders,store, checking_maps):
                 product_url, list_link_image, sku_workshop, factory = fetch_product_details(store, product_id ,type_)
 
                 new_orders.append([
-                    order_date, order_id, order_status, pay_url, customer_name, shipping_address_1, shipping_address_2, city, postcode,
+                    order_date, order_id_title, order_status, pay_url, customer_name, shipping_address_1, shipping_address_2, city, postcode,
                     state, country, billing_phone, shipping_phone, email, note, custom_name, custom_number, size, color, gender, type_,
                     product_name, product_id, sku, quantity, shipping_total, order_total if is_first_item else "", link_image, "", list_link_image,
                     product_url, unit_cost, total_cost, sku_workshop, factory, checking_number
@@ -522,6 +533,7 @@ def set_row_heights_to_100(sheet):
 
 # 🌟 Chạy chương trình
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding='utf-8')
     print("\n🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...")
     checking_maps = fetch_checking_numbers()  # Lấy dữ liệu checking numbers trước
 
@@ -538,7 +550,8 @@ if __name__ == "__main__":
         print('444444444')
         orders = fetch_orders(store)
         print('555555555')
-        new_orders, updated_orders = process_orders(orders, existing_orders, store, checking_maps)
+        title = google_sheets.title 
+        new_orders, updated_orders = process_orders(title,orders, existing_orders, store, checking_maps)
         print('66666666')
         update_google_sheets(google_sheets, new_orders, updated_orders)
         print('777777777')

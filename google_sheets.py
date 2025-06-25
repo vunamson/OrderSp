@@ -9,6 +9,8 @@ class GoogleSheetHandler:
         self.sheet_id = sheet_id
         # self.client = gspread.Client(auth=None)  # Không cần xác thực, chỉ truy cập Google Sheet công khai
         self.client = self.authenticate_google_sheets()
+        self.spreadsheet = self.client.open_by_key(self.sheet_id)
+        self.title = self.spreadsheet.title
 
     def authenticate_google_sheets(self):
         """Xác thực Google Sheets API"""
@@ -18,8 +20,9 @@ class GoogleSheetHandler:
 
     def get_sheets(self):
         """Truy xuất Sheet1 và Sheet2 từ Google Sheets"""
-        sheet = self.client.open_by_key(self.sheet_id)
-        return sheet.worksheet("Sheet1"), sheet.worksheet("Sheet2")
+        # sheet = self.client.open_by_key(self.sheet_id)
+        # return sheet.worksheet("Sheet1"), sheet.worksheet("Sheet2")
+        return self.spreadsheet.worksheet("Sheet1"), self.spreadsheet.worksheet("Sheet2")
     
     
     def update_cell(self, row, col, value):

@@ -1,4 +1,3 @@
-import threading
 from datetime import datetime, timedelta
 from google_sheets import GoogleSheetHandler
 from checking_number import Track17Selenium
@@ -8,10 +7,10 @@ import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
 SHEET_IDS = [
-    "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo",
-    "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0",
+    # "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo",
+    # "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0",
     "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM",
-    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",    
+    "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc",
     # "141M1T0VI6BOrsLokIxKhfzwvzSPrKgVoQKMUAwpw-Bw",
     # "1Eh1DQ55AmVQcg0j8q6tFUZ9d8a8V_6ugO3uxU4n9gTw",
     # "1SySSJt1i4lHp8Q3SlAE5VmsDfjEJ6oecxTABivAedW0",
@@ -22,8 +21,8 @@ SHEET_IDS = [
 ]
 
 nameStor = [
-    "Noaweather",
-    "Clothguy",
+    # "Noaweather",
+    # "Clothguy",
     "Lobreve",
     "Printpear",
     # "Cracksetup",
@@ -34,8 +33,8 @@ nameStor = [
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
-    "support@noaweather.com",
-    "support@clothguy.com",
+    # "support@noaweather.com",
+    # "support@clothguy.com",
     "support@lobreve.com",
     "support@printpear.com",
     # "support@clomic.com",
@@ -46,8 +45,8 @@ list_mail_support = [
     # "support@lovasuit.com",
 ]
 list_company_logo_URL = [
-    "https://noaweather.com/wp-content/uploads/2025/05/Flux_Dev_Create_a_modern_versatile_logo_for_noaweathercom_that_2__1_-removebg-preview-1.png",
-    "https://clothguy.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Create_a_modern_vibrant_logo_for_clothguycom_a_websit_3-removebg-preview.png",
+    # "https://noaweather.com/wp-content/uploads/2025/05/Flux_Dev_Create_a_modern_versatile_logo_for_noaweathercom_that_2__1_-removebg-preview-1.png",
+    # "https://clothguy.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Create_a_modern_vibrant_logo_for_clothguycom_a_websit_3-removebg-preview.png",
     "https://lobreve.com/wp-content/uploads/2025/03/Lobreve-removebg-preview.png",
     "https://printpear.com/wp-content/uploads/2025/03/cropped-Flux_Dev_Design_a_harmonious_logo_for_printpearcom_a_website_s_2-removebg-preview.png",
     # "https://clomic.com/wp-content/uploads/2025/03/Default_Design_a_modern_dynamic_logo_for_clomiccom_a_sportsthe_2_d6ac09dc-a11d-44fc-b2f9-cb4692f503d4_0.png",
@@ -61,16 +60,16 @@ list_company_logo_URL = [
 # ✅ Thiết lập thông tin API Gmail
 
 key_mail = {
-    "Noaweather":{
-        "CLIENT_ID" : "201153461734-ouf6bngsop3mau00qarsacpukvabs3uj.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04w0mr2AAq-NpCgYIARAAGAQSNwF-L9IrXcGgXIFQ8Re6cBruySmx5L-dIprl17oGPBfPTaexKiRS8dkaeXrHJVSSl7ujkaepwAo"
-    },
-    "Clothguy":{
-        "CLIENT_ID" : "636468432266-014v2lao9j86hfa1ssgv05nfkaeksi4t.apps.googleusercontent.com",
-        "CLIENT_SECRET" : "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",
-        "REFRESH_TOKEN" : "1//04u19kzr3sH3TCgYIARAAGAQSNwF-L9IrnX-KddJkZXN4VgKBV9p1RM1R-Ai6L7ILx0svx0V28YqBxnw5iNDpI0TxdU5uJc8JN_c"
-    },
+    # "Noaweather":{
+    #     "CLIENT_ID" : "201153461734-ouf6bngsop3mau00qarsacpukvabs3uj.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04w0mr2AAq-NpCgYIARAAGAQSNwF-L9IrXcGgXIFQ8Re6cBruySmx5L-dIprl17oGPBfPTaexKiRS8dkaeXrHJVSSl7ujkaepwAo"
+    # },
+    # "Clothguy":{
+    #     "CLIENT_ID" : "636468432266-014v2lao9j86hfa1ssgv05nfkaeksi4t.apps.googleusercontent.com",
+    #     "CLIENT_SECRET" : "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",
+    #     "REFRESH_TOKEN" : "1//04u19kzr3sH3TCgYIARAAGAQSNwF-L9IrnX-KddJkZXN4VgKBV9p1RM1R-Ai6L7ILx0svx0V28YqBxnw5iNDpI0TxdU5uJc8JN_c"
+    # },
     "Lobreve":{
         "CLIENT_ID" : "417705534492-c8u3vh30tp37oav313k9ru72209dkvd5.apps.googleusercontent.com",
         "CLIENT_SECRET" : "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",
@@ -116,7 +115,7 @@ key_mail = {
 
 
 MAX_REQUESTS_PER_MINUTE = 80  # Dưới giới hạn Google
-# request_count = 0
+request_count = 0
 
 # ✅ Hàm kiểm tra xem có đơn hàng thất bại nhưng vẫn có email không
 def check_status_failure(sheet_data, email, index):
@@ -135,11 +134,12 @@ def check_order_id_no_status(sheet_data, index, status):
                 return True
     return False
 
-def process_sheet(sheet_id, index):
-    request_count = 0
+# ✅ Lặp qua từng Google Sheet ID
+for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
     email_sender = EmailSender(key_mail[nameStor[index]]["CLIENT_ID"],key_mail[nameStor[index]]["CLIENT_SECRET"],key_mail[nameStor[index]]["REFRESH_TOKEN"])
     # email_sender = EmailSender(key_mail["Luxinshoes"]["CLIENT_ID"], key_mail["Luxinshoes"]["CLIENT_SECRET"], key_mail["Luxinshoes"]["REFRESH_TOKEN"])
     print(f"\n🚀 Bắt đầu xử lý Google Sheet: {sheet_id}")
+
     # ✅ B1: Cập nhật và sắp xếp lại Sheet2
     google_sheets = GoogleSheetHandler(sheet_id)
     print("🔄 Đang cập nhật Sheet2...")
@@ -260,157 +260,4 @@ def process_sheet(sheet_id, index):
 
     print(f"✅ Hoàn tất xử lý Google Sheet: {sheet_id}")
 
-# ✅ Lặp qua từng Google Sheet ID
-# for index, sheet_id in enumerate(SHEET_IDS):  # Lấy index tự động
-#     email_sender = EmailSender(key_mail[nameStor[index]]["CLIENT_ID"],key_mail[nameStor[index]]["CLIENT_SECRET"],key_mail[nameStor[index]]["REFRESH_TOKEN"])
-#     # email_sender = EmailSender(key_mail["Luxinshoes"]["CLIENT_ID"], key_mail["Luxinshoes"]["CLIENT_SECRET"], key_mail["Luxinshoes"]["REFRESH_TOKEN"])
-#     print(f"\n🚀 Bắt đầu xử lý Google Sheet: {sheet_id}")
-
-#     # ✅ B1: Cập nhật và sắp xếp lại Sheet2
-#     google_sheets = GoogleSheetHandler(sheet_id)
-#     print("🔄 Đang cập nhật Sheet2...")
-#     google_sheets.update_sheet2()
-
-#     # ✅ B2: Lấy dữ liệu từ Sheet2
-#     print("🔍 Lấy dữ liệu từ Sheet2...")
-#     sheet2 = google_sheets.get_sheets()[1]
-#     sheet2_data = sheet2.get_all_values()
-#     headers = sheet2_data[0]  # Tiêu đề cột
-#     data_rows = sheet2_data[1:]  # Loại bỏ tiêu đề
-
-#     # ✅ Lặp qua từng đơn hàng trong Sheet2
-#     for i, row in enumerate(data_rows, start=2):  # Bắt đầu từ dòng 2 (sau tiêu đề)
-
-#         if request_count >= MAX_REQUESTS_PER_MINUTE:
-#             print("🛑 Đạt giới hạn request, nghỉ 60 giây...")
-#             time.sleep(60)
-#             request_count = 0  # Reset bộ đếm
-
-#         row_length = len(row)
-#         order_date = row[0]
-#         email = row[2]
-#         customer_name = row[3]
-#         tracking_number = row[4]
-#         current_status = row[5]
-#         order_status = row[6]
-#         pay_url = row[7]
-#         shipping_state = row[8]
-#         date_status_order = row[11] if row_length > 11 else ""
-
-#         # ✅ Kiểm tra nếu đơn hàng thất bại nhưng không thuộc IL hoặc FL và không mua lại sản phẩm
-#         if order_status == "failed" and not check_status_failure(sheet2_data, email, i):
-#             if shipping_state not in ["IL", "FL"]:
-#                 email_type = check_date_email(order_date)
-#                 if email_type:
-#                     if email_type not in ["marketing", "day14"]:
-#                         email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                         google_sheets.update_cell(i, 10, email_type + "Failed")  # Cập nhật cột J
-#                     # elif email_type == "marketing":
-#                     #     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                     #     google_sheets.update_cell(i, 10, email_type + "Failed")
-
-#                 email_type_failed = check_date_email_failed(order_date)
-#                 if email_type_failed:
-#                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type_failed + "Failed", pay_url, nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                     google_sheets.update_cell(i, 10, email_type_failed + "Failed")
-
-#         else: #Nếu đơn hàng không failed 
-#             if not check_order_id_no_status(sheet2_data, i, current_status): # Không có đơn hàng nào đằng trước cùng ID và cũng chưa có status
-#                 email_type = check_date_email(order_date)
-#                 if tracking_number: # kiểm tra xem đã có number checking chưa
-#                     tracker = Track17Selenium(tracking_number)
-#                     new_status = tracker.track()
-#                     # ✅ Kiểm tra nếu new_status là dict (trả về lỗi)
-#                     # if isinstance(new_status, dict):
-#                     #     new_status = new_status.get("error", "Unknown Status")
-#                     # elif isinstance(new_status, list):
-#                     #     new_status = new_status[0]  # Nếu là list, lấy phần tử đầu tiên
-
-#                     # # ✅ Chuẩn hóa trạng thái tracking
-#                     # new_status = new_status.lower()
-#                     print('new_status' , new_status)
-#                     if("Info received" in new_status) : new_status = "InfoReceived"
-#                     elif "In transit" in new_status or new_status =="Depart from port" or new_status=="Arrived at port" : new_status = "InTransit"
-#                     elif("Pick up" in new_status) : new_status = "PickUp"
-#                     elif("Out for delivery" in new_status) : new_status = "OutForDelivery"
-#                     elif("Undelivered" in new_status or new_status == "Delivery Exception") : new_status = "Undelivered"
-#                     elif("Delivered" in new_status) : new_status = "Delivered"
-#                     elif("Alert" in new_status or new_status =="Package Exception") : new_status = "Alert"
-#                     elif("Expired" in new_status) : new_status = "Expired"
-#                     else: new_status=""
-
-#                     print('new_status2' , new_status)
-#                     # ✅ Nếu trạng thái thay đổi -> Cập nhật vào Sheet & Gửi email
-#                     status_order_false = ['Alert','Undelivered','Expired']
-#                     if new_status and new_status != current_status:
-#                         google_sheets.update_cell(i, 6, new_status)  # Cập nhật cột F
-#                         email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, new_status, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                         google_sheets.update_cell(i, 10, new_status)  # Cập nhật cột J
-#                         request_count += 2
-#                         if new_status not in status_order_false : 
-#                             formatted_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
-#                             google_sheets.update_cell(i, 12, formatted_datetime)
-#                             google_sheets.update_cell(i, 13, '')
-#                             request_count += 2
-#                         else : # Nếu order status bị lỗi gửi mail cho chính mình 
-#                             email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "LoiOrder", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                             google_sheets.update_cell(i, 13, "Loi " + new_status)
-#                             request_count +=1
-#                     else:
-#                         status_order_true = ['InfoReceived', 'InTransit','PickUp','OutForDelivery']
-#                         # sau 10 ngày và 13 ngày chưa chuyển trạng thái gửi mail cho chính mình 
-#                         if date_status_order and new_status : 
-#                             day_status = check_date(date_status_order)
-#                             if new_status in status_order_true and day_status == 10 :
-#                                 email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder10Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                                 google_sheets.update_cell(i, 13, "ngày 10 chưa chuyển trạng thái ")
-#                                 request_count += 1
-#                             elif new_status in status_order_true and day_status == 13 :
-#                                 email_sender.email_check(list_mail_support[index],"poncealine342@gmail.com", customer_name, tracking_number, "DelayOrder13Day", "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                                 google_sheets.update_cell(i, 13, "ngày 13 chưa chuyển trạng thái ")
-#                                 request_count += 1
-#                 elif email_type and email_type not in ["marketing", "day14"]: # nếu chưa có number checking mới bắt đầu gửi mail theo ngày
-#                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                     google_sheets.update_cell(i, 10, email_type)
-#                     request_count += 2
-                
-#                 if email_type == "marketing" and current_status == "Delivered": # Gửi mail cskh
-#                     email_sender.email_check(list_mail_support[index],email, customer_name, tracking_number, email_type, "", nameStor[index],list_company_logo_URL[index],datetime.now() + timedelta(hours=24))
-#                     google_sheets.update_cell(i, 11, email_type)
-#                     request_count += 2
-
-#         # ✅ Nghỉ giữa các lần chạy để tránh bị Google chặn
-#         if i % 20 == 0:
-#             print("🛑 Nghỉ 10 giây để tránh bị chặn...")
-#             time.sleep(10)
-
-#     print(f"✅ Hoàn tất xử lý Google Sheet: {sheet_id}")
-
-def safe_process(sheet_id, idx):
-    """
-    Wrapper đảm bảo bắt exception riêng cho mỗi luồng
-    """
-    try:
-        process_sheet(sheet_id, idx)
-    except Exception as e:
-        print(f"❌ Thread lỗi sheet {sheet_id}: {e}")
-
-def main():
-    threads = []
-    for idx, sheet_id in enumerate(SHEET_IDS):
-        t = threading.Thread(target=safe_process, args=(sheet_id, idx), daemon=True)
-        threads.append(t)
-        t.start()
-        print(f"🚀 Bắt đầu thread cho sheet {sheet_id}")
-
-    # Chờ tất cả threads xong
-    for t in threads:
-        t.join()
-        print(f"✅ Thread {t.name} hoàn thành")
-
-    print("🎉 Hoàn tất xử lý tất cả sheets!")
-
-
-if __name__ == "__main__":
-    main()
-
+print("🎉 Hoàn tất kiểm tra & gửi email cho tất cả Google Sheets!")
