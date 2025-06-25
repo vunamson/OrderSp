@@ -1,0 +1,2092 @@
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 528, in <module>
+    print("\n\U0001f504 \u0110ang t\u1ea3i d\u1eef li\u1ec7u Checking Numbers t\u1eeb Google Sheets...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f504' in position 2: character maps to <undefined>
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 537 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 342 đơn hàng
+✅ Lấy dữ liệu từ hog: 1679 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 579 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 546, in <module>
+    title = google_sheets.title
+            ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GoogleSheetHandler' object has no attribute 'title'
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 537 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 357 đơn hàng
+✅ Lấy dữ liệu từ hog: 1679 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 606 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 22 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC24) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+❌ Lỗi khi gán công thức vào AC: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:322156275508'.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC99) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC688) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1113) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC104) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC917) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 538 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 357 đơn hàng
+✅ Lấy dữ liệu từ hog: 1679 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 650 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 5 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 3 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC26) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 14 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC99) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 536, in <module>
+    google_sheets = GoogleSheetHandler(store["sheet_id"])
+  File "C:\17track\google_sheets.py", line 12, in __init__
+    self.spreadsheet = self.client.open_by_key(self.sheet_id)
+                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\client.py", line 174, in open_by_key
+    raise ex
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\client.py", line 168, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread_formatting\functions.py", line 175, in fetch_sheet_metadata
+    r = self.client.request('get', url, params=params)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:322156275508'.
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 539 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 357 đơn hàng
+✅ Lấy dữ liệu từ hog: 1679 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 712 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 5 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 10 đơn hàng mới
+✅ Đã cập nhật 5 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC40) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 5 đơn hàng mới
+✅ Đã cập nhật 20 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC104) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 4 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC103) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 5 đơn hàng mới
+✅ Đã cập nhật 71 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC714) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 9 đơn hàng mới
+✅ Đã cập nhật 72 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1142) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC106) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 11 đơn hàng mới
+✅ Đã cập nhật 34 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC936) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 540 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 381 đơn hàng
+✅ Lấy dữ liệu từ hog: 1679 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 750 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 17 đơn hàng mới
+✅ Đã cập nhật 6 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC63) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 11 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC109) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 3 đơn hàng mới
+✅ Đã cập nhật 6 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC106) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 16 đơn hàng mới
+✅ Đã cập nhật 56 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC747) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 10 đơn hàng mới
+✅ Đã cập nhật 49 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1160) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC107) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 13 đơn hàng mới
+✅ Đã cập nhật 33 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC957) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 545 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 381 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 853 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 3 đơn hàng mới
+✅ Đã cập nhật 10 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC72) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 3 đơn hàng mới
+✅ Đã cập nhật 4 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC112) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC108) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 18 đơn hàng mới
+✅ Đã cập nhật 22 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC774) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 12 đơn hàng mới
+✅ Đã cập nhật 14 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1179) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC107) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 8 đơn hàng mới
+✅ Đã cập nhật 15 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC971) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 545 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 381 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 853 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 4 đơn hàng mới
+✅ Đã cập nhật 23 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC76) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 4 đơn hàng mới
+✅ Đã cập nhật 7 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC116) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 4 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC110) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 34 đơn hàng mới
+✅ Đã cập nhật 28 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC808) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 17 đơn hàng mới
+✅ Đã cập nhật 21 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1196) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC109) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 23 đơn hàng mới
+✅ Đã cập nhật 22 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC994) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 545 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 381 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 853 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 21 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC77) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://drupid.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 974, in json
+    return complexjson.loads(self.text, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\json\decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 544, in <module>
+    orders = fetch_orders(store)
+  File "C:\17track\main_update_order.py", line 278, in fetch_orders
+    data = response.json()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\models.py", line 978, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 547 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 392 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 958 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 22 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 4 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC78) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 6 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC116) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 10 đơn hàng mới
+✅ Đã cập nhật 42 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC867) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 11 đơn hàng mới
+✅ Đã cập nhật 32 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1239) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 8 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC110) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 8 đơn hàng mới
+✅ Đã cập nhật 32 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1022) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 550 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 392 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1067 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 460, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 504, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 741, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 920, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 460, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 504, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 544, in <module>
+    orders = fetch_orders(store)
+  File "C:\17track\main_update_order.py", line 275, in fetch_orders
+    response = requests.get(
+        f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}",headers=headers
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 553 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 392 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1124 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 7 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC119) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 22 đơn hàng mới
+✅ Đã cập nhật 93 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC926) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC111) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 7 đơn hàng mới
+✅ Đã cập nhật 49 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1040) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 553 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1169 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 8 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC96) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC121) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 22 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC963) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC111) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 6 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1053) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 554 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1209 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 3 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC101) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 6 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC125) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 5 đơn hàng mới
+✅ Đã cập nhật 78 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC980) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1254) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC112) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 5 đơn hàng mới
+✅ Đã cập nhật 31 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1062) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 554 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1256 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 3 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC107) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 549, in <module>
+    update_google_sheets(google_sheets, new_orders, updated_orders)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\17track\main_update_order.py", line 469, in update_google_sheets
+    google_sheets.sort_sheet(sheet1, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\17track\google_sheets.py", line 147, in sort_sheet
+    data = sheet.get_all_values()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 485, in get_all_values
+    return self.get_values(
+           ~~~~~~~~~~~~~~~^
+        range_name=range_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        return_type=return_type,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 462, in get_values
+    return self.get(
+           ~~~~~~~~^
+        range_name=range_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        return_type=return_type,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\worksheet.py", line 954, in get
+    response = self.client.values_get(
+        self.spreadsheet_id, get_range_name, params=params
+    )
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 236, in values_get
+    r = self.request("get", url, params=params)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:322156275508'.
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 554 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1256 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 3 đơn hàng mới
+✅ Đã cập nhật 9 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC110) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 2 đơn hàng mới
+✅ Đã cập nhật 3 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC128) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 43 đơn hàng mới
+✅ Đã cập nhật 27 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1032) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 19 đơn hàng mới
+✅ Đã cập nhật 1 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1275) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 1 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC112) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 21 đơn hàng mới
+✅ Đã cập nhật 8 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1087) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 557 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1345 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://gardenleap.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 4 đơn hàng mới
+✅ Đã cập nhật 2 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 21 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC110) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+Traceback (most recent call last):
+  File "C:\17track\main_update_order.py", line 543, in <module>
+    google_sheets = GoogleSheetHandler(store["sheet_id"])
+  File "C:\17track\google_sheets.py", line 12, in __init__
+    self.spreadsheet = self.client.open_by_key(self.sheet_id)
+                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\client.py", line 174, in open_by_key
+    raise ex
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\client.py", line 168, in open_by_key
+    spreadsheet = Spreadsheet(self.http_client, {"id": key})
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread_formatting\functions.py", line 175, in fetch_sheet_metadata
+    r = self.client.request('get', url, params=params)
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python313\Lib\site-packages\gspread\http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [503]: The service is currently unavailable.
+
+🔄 Đang tải dữ liệu Checking Numbers từ Google Sheets...
+✅ Lấy dữ liệu từ shoes: 558 đơn hàng
+✅ Lấy dữ liệu từ cn: 25 đơn hàng
+✅ Lấy dữ liệu từ merchfox: 1564 đơn hàng
+✅ Lấy dữ liệu từ webbb: 411 đơn hàng
+✅ Lấy dữ liệu từ hog: 1680 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-3d: 1385 đơn hàng
+✅ Lấy dữ liệu từ hog-t6-2d: 24 đơn hàng
+
+🚀 Đang cập nhật dữ liệu cho store: https://gardenleap.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 8 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC26) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://magliba.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC14) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://bokocoko.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC111) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://lovasuit.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC129) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://noaweather.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 1 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1048) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clothguy.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 9 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1295) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://printpear.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 0 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC112) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🚀 Đang cập nhật dữ liệu cho store: https://clomic.com/wp-json/wc/v3/orders
+11111111111111
+2222222
+333333333
+444444444
+555555555
+66666666
+✅ Đã thêm 15 đơn hàng mới
+✅ Đã cập nhật 0 đơn hàng
+✅ Đã sắp xếp Sheet theo cột Order Date (Ngày mới nhất -> cũ nhất).
+✅ Đã sắp xếp lại Sheet1 theo Order Date
+✅ Đã tô màu cột Order Status theo trạng thái đơn hàng
+adjacent_col_letter AB 29
+✅ Công thức đã được gán vào cột AC (AC2:AC1122) với link ảnh từ cột AB.
+✅ Đã đặt chiều cao tất cả các hàng thành 100px
+✅ Đã tô lại màu Sheet1 theo Order Status
+777777777
+
+🎉 Hoàn tất cập nhật đơn hàng!

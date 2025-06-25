@@ -41,13 +41,14 @@ driver = create_driver()
 
 class Track17Selenium:
     BASE_URL = "https://t.17track.net/en"
-
+    # driver = create_driver()
     def __init__(self, tracking_number):
         self.tracking_number = tracking_number
+        # self.driver = create_driver()
 
     def track(self):
-
         try:
+            # driver = self.driver
             driver.get(self.BASE_URL)
             wait = WebDriverWait(driver, 10)
 
@@ -77,6 +78,13 @@ class Track17Selenium:
         except Exception as e:
             # driver.quit()
             return {"error": f"Failed to fetch tracking data: {str(e)}"}
+        # finally:
+        #     # Đảm bảo luôn quit driver
+        #     try:
+        #         driver.quit()
+        #     except Exception:
+        #         pass
+
 
 # Sử dụng
 # if __name__ == "__main__":

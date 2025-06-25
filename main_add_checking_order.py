@@ -1,4 +1,5 @@
 import time
+import threading
 import requests
 import pytz
 from google_sheets import GoogleSheetHandler
@@ -18,6 +19,12 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
+    "1UiOMmQPkMmq0tewpiCsmyrXx7qMwW6iE21GjqzHVO7c": {
+        "url": "https://gardenleap.com/",
+        "consumer_key": "ck_258fbfb50bbc34ae9cc49b561276f6b3410b24f3",
+        "consumer_secret": "cs_88a428e2c8696a62e12ea3f3136f1f51e6136fd8",
+        "type_date": "Etc/GMT+0"
+    },
     "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY": {
         "url": "https://magliba.com/",
         "consumer_key": "ck_2a63890f1a5611614092b2fc91d649e2036e1cb9",
@@ -26,20 +33,20 @@ SHEET_AND_STORES = {
     },
     "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo": {
         "url": "https://bokocoko.com/",
-        "consumer_key": "ck_bfb542470a2eb1d0e09a0e1f0563591573831659",
-        "consumer_secret": "cs_7736be3c0e12895cefc49e334cfd0a6e0e7ebfe2",
+        "consumer_key": "ck_eddf9ccb7607fe7978e0fcbf27982e4d68ed84b0",
+        "consumer_secret": "cs_67c736aaf25e2e1488e266ad0167fdcf5372c759",
         "type_date": "Etc/GMT+0"
     },
-    "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY": {
-        "url": "https://drupid.com/",
-        "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
-        "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
-        "type_date": "Etc/GMT+0"
-    },
+    # "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY": {
+    #     "url": "https://drupid.com/",
+    #     "consumer_key": "ck_a08fd188d048441d583da2d44fc2cd9ab9937f8e",
+    #     "consumer_secret": "cs_3256d76180597db88a67b54d6b4d8ab4e547eed9",
+    #     "type_date": "Etc/GMT+0"
+    # },
     "1oTKNUs_3XRJ7GD4C8q5ay-1JjRub2wKdOF1HDFSXEo8": {
         "url": "https://lovasuit.com/",
-        "consumer_key": "ck_6609fc6bd730a925c9fc16e2445e0d433abc323d",
-        "consumer_secret": "cs_9265f5db3482e3210fef476cdd85944c1d05f830",
+        "consumer_key": "ck_046b35126ce3614180eb5bc5587f2efb44cf63e3",
+        "consumer_secret": "cs_cb4e461b985af43fcfd942171aedf9bdb0ebe877",
         "type_date": "Etc/GMT+0"
     },
     "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo": {
@@ -50,8 +57,8 @@ SHEET_AND_STORES = {
     },
     "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0": {
         "url": "https://clothguy.com/",
-        "consumer_key": "ck_0af4e203af237c0877ad2bb9bfbfa46c9096f85d",
-        "consumer_secret": "cs_8c084ab759b120b119713233a9ae043afeebae62",
+        "consumer_key": "ck_34f1a62a35d0997de2a0fbf70572931989f10a24",
+        "consumer_secret": "cs_b27d9c0ab95737dd5e1c2028b8921d41889ffcb9",
         "type_date": "Etc/GMT+0"
     },
     "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM": {
@@ -171,6 +178,7 @@ def process_orders(sheet_id, store_config ):
     """
     try:
         google_sheets = GoogleSheetHandler(sheet_id)
+        title = google_sheets.title 
         sheet1, _ = google_sheets.get_sheets()
         data = sheet1.get_all_values()
         
@@ -184,6 +192,13 @@ def process_orders(sheet_id, store_config ):
 
         for row in data[1:]:  # Bỏ qua tiêu đề
             order_id = row[order_id_idx].strip()
+            if title and title in order_id:
+                # Nếu bạn chỉ muốn bỏ khi title ở đầu thì dùng startswith:
+                if order_id.startswith(title):
+                    order_id = order_id[len(title):]
+                else:
+                    # hoặc bỏ mọi chỗ title xuất hiện:
+                    order_id = order_id.replace(title, "", 1)
             number_checking = row[number_checking_idx].strip()
             if order_id and number_checking and number_checking != "Cancel":  # Kiểm tra nếu có mã theo dõi
                 print(f"🔍 Đang kiểm tra mã theo dõi cho đơn hàng: {order_id}")
@@ -201,14 +216,40 @@ def process_orders(sheet_id, store_config ):
     except Exception as e:
         print(f"❌ Lỗi khi xử lý đơn hàng trong Sheet {sheet_id}: {e}")
 
+def safe_process(sheet_id, store_config):
+    """
+    Wrapper đảm bảo bắt exception riêng cho mỗi luồng
+    """
+    try:
+        process_orders(sheet_id, store_config)
+    except Exception as e:
+        print(f"❌ Thread lỗi sheet {sheet_id}: {e}")
+
 def main():
     """
     Chạy chương trình với các Sheet ID và store tương ứng.
     """
+    threads = []
     for sheet_id, store_config in SHEET_AND_STORES.items():
-        print(f"\n🚀 Đang xử lý Sheet với ID: {sheet_id} và WooCommerce Store: {store_config['url']}")
-        process_orders(sheet_id, store_config )
+        t = threading.Thread(
+            target=safe_process,
+            args=(sheet_id, store_config),
+            daemon=True,           # nếu muốn thread tự tắt khi main kết thúc
+            name=f"Worker-{sheet_id}"
+        )
+        threads.append(t)
+        t.start()
+        print(f"🚀 Bắt đầu thread {t.name} cho Sheet {sheet_id}")
+
+        # print(f"\n🚀 Đang xử lý Sheet với ID: {sheet_id} và WooCommerce Store: {store_config['url']}")
+
+    for t in threads:
+        t.join()
+        print(f"✅ Thread {t.name} đã hoàn thành")
+
     print("\n🎉 Hoàn tất xử lý đơn hàng và cập nhật mã theo dõi!")
+        # process_orders(sheet_id, store_config )
+    # print("\n🎉 Hoàn tất xử lý đơn hàng và cập nhật mã theo dõi!")
 
 if __name__ == "__main__":
     main()
