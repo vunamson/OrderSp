@@ -19,6 +19,18 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
+    "1GGFnHXapQZNGOh71qmQi5-OdCSYnfgewK1XHDhHu4Fc": {
+        "url": "https://vazava.com/",
+        "consumer_key": "ck_7f2f6c2061cd1905ab2f097055a72e742567a1f8",
+        "consumer_secret": "cs_fddf6bff14e45fe769ad5aba4c65c9cfbe2222c7",
+        "type_date": "Etc/GMT+0"
+    },
+    "1AygotqSY58fHQgAEVVmnpO-REwJEVvqdpxGi9u1jsn4": {
+        "url": "https://lacadella.com/",
+        "consumer_key": "ck_c3e45e1dbee2160c2bf7fb77d8a12b3a43a15411",
+        "consumer_secret": "cs_3f8568a84aceb7bf864dd4c34ad99c349fb9ca70",
+        "type_date": "Etc/GMT+0"
+    },
     "1UiOMmQPkMmq0tewpiCsmyrXx7qMwW6iE21GjqzHVO7c": {
         "url": "https://gardenleap.com/",
         "consumer_key": "ck_258fbfb50bbc34ae9cc49b561276f6b3410b24f3",
@@ -33,8 +45,8 @@ SHEET_AND_STORES = {
     },
     "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo": {
         "url": "https://bokocoko.com/",
-        "consumer_key": "ck_eddf9ccb7607fe7978e0fcbf27982e4d68ed84b0",
-        "consumer_secret": "cs_67c736aaf25e2e1488e266ad0167fdcf5372c759",
+        "consumer_key": "ck_9e2ba1142214a267b0f7d12627d58ec9726c5e90",
+        "consumer_secret": "cs_671c7daa687e99bb52b0b4c20565b35f4d3ce6fa",
         "type_date": "Etc/GMT+0"
     },
     # "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY": {
@@ -57,8 +69,8 @@ SHEET_AND_STORES = {
     },
     "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0": {
         "url": "https://clothguy.com/",
-        "consumer_key": "ck_34f1a62a35d0997de2a0fbf70572931989f10a24",
-        "consumer_secret": "cs_b27d9c0ab95737dd5e1c2028b8921d41889ffcb9",
+        "consumer_key": "ck_543ac64c00aa1e1f9aa980524384af2d97c523c5",
+        "consumer_secret": "cs_4f32ece7b9fc0dbfdbc69e41f62a4bcfe932ec7d",
         "type_date": "Etc/GMT+0"
     },
     "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM": {

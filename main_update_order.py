@@ -8,25 +8,39 @@ from gspread_formatting import (
     CellFormat, Color
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
-     {
+    {
+        "url": "https://vazava.com/wp-json/wc/v3/orders",
+        "product_url": "https://vazava.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_7f2f6c2061cd1905ab2f097055a72e742567a1f8",
+        "consumer_secret": "cs_fddf6bff14e45fe769ad5aba4c65c9cfbe2222c7",
+        "sheet_id": "1GGFnHXapQZNGOh71qmQi5-OdCSYnfgewK1XHDhHu4Fc"
+    },
+    {
+        "url": "https://lacadella.com/wp-json/wc/v3/orders",
+        "product_url": "https://lacadella.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_c3e45e1dbee2160c2bf7fb77d8a12b3a43a15411",
+        "consumer_secret": "cs_3f8568a84aceb7bf864dd4c34ad99c349fb9ca70",
+        "sheet_id": "1AygotqSY58fHQgAEVVmnpO-REwJEVvqdpxGi9u1jsn4"
+    },
+    {
         "url": "https://gardenleap.com/wp-json/wc/v3/orders",
         "product_url": "https://gardenleap.com/wp-json/wc/v3/products/",
         "consumer_key": "ck_258fbfb50bbc34ae9cc49b561276f6b3410b24f3",
         "consumer_secret": "cs_88a428e2c8696a62e12ea3f3136f1f51e6136fd8",
         "sheet_id": "1UiOMmQPkMmq0tewpiCsmyrXx7qMwW6iE21GjqzHVO7c"
     },
-    {
-        "url": "https://magliba.com/wp-json/wc/v3/orders",
-        "product_url": "https://magliba.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_2a63890f1a5611614092b2fc91d649e2036e1cb9",
-        "consumer_secret": "cs_7905a4198dad956d0800f0eb4599bdafe89791da",
-        "sheet_id": "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY"
-    },
+    # {
+    #     "url": "https://magliba.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://magliba.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_2a63890f1a5611614092b2fc91d649e2036e1cb9",
+    #     "consumer_secret": "cs_7905a4198dad956d0800f0eb4599bdafe89791da",
+    #     "sheet_id": "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY"
+    # },
     {
         "url": "https://bokocoko.com/wp-json/wc/v3/orders",
         "product_url": "https://bokocoko.com/wp-json/wc/v3/products/",
-        "consumer_key": "ck_eddf9ccb7607fe7978e0fcbf27982e4d68ed84b0",
-        "consumer_secret": "cs_67c736aaf25e2e1488e266ad0167fdcf5372c759",
+        "consumer_key": "ck_9e2ba1142214a267b0f7d12627d58ec9726c5e90",
+        "consumer_secret": "cs_671c7daa687e99bb52b0b4c20565b35f4d3ce6fa",
         "sheet_id": "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo"
     },
     # {
@@ -64,18 +78,18 @@ WOOCOMMERCE_STORES = [
     #     "consumer_secret": "cs_68a0b53f5d1a93d7c4bdb613c6bda038ce8aa807",
     #     "sheet_id": "1SinUd6nxbowMmwWiZcw16yNJsprOHtEdJl1g0pxb0fM"
     # },
-    # {
-    #     "url": "https://noaweather.com/wp-json/wc/v3/orders",
-    #     "product_url": "https://noaweather.com/wp-json/wc/v3/products/",    
-    #     "consumer_key": "ck_3c4184984f798639b393c9a610a4ca1910013640",
-    #     "consumer_secret": "cs_4c93f7bb12b043b87c7af9685367e73dbfde044d",
-    #     "sheet_id": "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo"
-    # },
+    {
+        "url": "https://noaweather.com/wp-json/wc/v3/orders",
+        "product_url": "https://noaweather.com/wp-json/wc/v3/products/",    
+        "consumer_key": "ck_3c4184984f798639b393c9a610a4ca1910013640",
+        "consumer_secret": "cs_4c93f7bb12b043b87c7af9685367e73dbfde044d",
+        "sheet_id": "1oATa0YEllGkC8aFWiElzWO0nJmp2652mhqyvq3sVnOo"
+    },
     {
         "url": "https://clothguy.com/wp-json/wc/v3/orders",
         "product_url": "https://clothguy.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_34f1a62a35d0997de2a0fbf70572931989f10a24",
-        "consumer_secret": "cs_b27d9c0ab95737dd5e1c2028b8921d41889ffcb9",
+        "consumer_key": "ck_543ac64c00aa1e1f9aa980524384af2d97c523c5",
+        "consumer_secret": "cs_4f32ece7b9fc0dbfdbc69e41f62a4bcfe932ec7d",
         "sheet_id": "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0"
     },
     {
@@ -157,7 +171,14 @@ SHEET_SOURCES = {
         "sheet_name": "THÁNG 6-2D",
         "order_id_col": 4,  # Cột L (Order ID)
         "checking_number_col": 5  # Cột E (Checking Number)
+    },
+    "hog-t7":{
+        "sheet_id": "1jDZbTZzUG-_Sw3NXgKMjRa5YD9V3PjMkLlx78-w688Y",
+        "sheet_name": "THÁNG 7 - BY SELLER ",
+        "order_id_col": 4,  # Cột L (Order ID)
+        "checking_number_col": 5  # Cột E (Checking Number)
     }
+    
 }
 
 headers = {
@@ -175,7 +196,8 @@ def fetch_checking_numbers():
         "webbb": {},
         "hog" : {},
         "hog-t6-3d":{},
-        "hog-t6-2d": {}
+        "hog-t6-2d": {},
+        "hog-t7": {},
     }
 
     for source_name, source in SHEET_SOURCES.items():
@@ -354,6 +376,8 @@ def process_orders(title,orders, existing_orders,store, checking_maps):
             checking_number = checking_maps["hog-t6-3d"][order_id]
         elif order_id in checking_maps["hog-t6-2d"]:
             checking_number = checking_maps["hog-t6-2d"][order_id]
+        elif order_id in checking_maps["hog-t7"]:
+            checking_number = checking_maps["hog-t7"][order_id]
 
 
 
@@ -531,6 +555,26 @@ def set_row_heights_to_100(sheet):
     set_row_heights(sheet, [('1:1000', 100)])  # Đặt chiều cao tất cả các hàng từ 1 đến 1000 là 100px
     print("✅ Đã đặt chiều cao tất cả các hàng thành 100px")
 
+def update_sheet_checking(sheet ,checking_maps) : 
+    values = sheet.get_all_values()
+    updates = []
+    # Dòng đầu là header, bắt đầu từ row 2
+    for idx, row in enumerate(values[1:], start=2):
+        order_id = row[1].strip()  # Cột B Order ID
+        # tìm checking mới từ tất cả nguồn
+        new_check = None
+        for src in checking_maps.values():
+            if order_id in src:
+                new_check = src[order_id]
+                break
+        if new_check is not None and row[35] != new_check:  # cột AJ index 35
+            updates.append({"range": f"AJ{idx}", "values": [[new_check]]})
+    if updates:
+        sheet.batch_update(updates)
+        print(f"✅ Updated {len(updates)} checking numbers")
+    else:
+        print("✅ No checking number updates needed")
+
 # 🌟 Chạy chương trình
 if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
@@ -555,4 +599,8 @@ if __name__ == "__main__":
         print('66666666')
         update_google_sheets(google_sheets, new_orders, updated_orders)
         print('777777777')
+        time.sleep(60)
+        sheet1_update, _ = google_sheets.get_sheets()
+        update_sheet_checking(sheet1_update,checking_maps)
+
     print("\n🎉 Hoàn tất cập nhật đơn hàng!") 
