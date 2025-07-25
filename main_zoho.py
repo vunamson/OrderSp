@@ -8,6 +8,9 @@ import time
 
 # ✅ Danh sách ID Google Sheets (Thay thế bằng danh sách của bạn)
 SHEET_IDS = [
+    "1WYCdD01faFIwJknZSmd_vYur2hwqHVIRKwt8BP_yX1Q",
+    "1UiOMmQPkMmq0tewpiCsmyrXx7qMwW6iE21GjqzHVO7c",
+    "1GGFnHXapQZNGOh71qmQi5-OdCSYnfgewK1XHDhHu4Fc",
     "14KecG--oRcj5otgvFJ8Kl16D556L9Cz32K4I3TjyBRY",
     "1LnDxYEHkJ5yxLU8KyEZhnivSYoxuYqB4b9TjoAssdSo",
     "1t55QypLzvRFUDh0BchJfU9-Y-wAQPF-06yeJ8XW-ttY",
@@ -16,6 +19,9 @@ SHEET_IDS = [
 ]
 
 nameStor = [
+    "Newsongspost",
+    "Gardenleap",
+    "Vazava",
     "Magliba",
     "BOKOCOKO",
     "Drupid",
@@ -25,6 +31,9 @@ nameStor = [
 
 # nameStor = [ "Davidress","Luxinshoes","Onesimpler","Xanawood","Lovasuit"]
 list_mail_support = [
+    "support@newsongspost.com",
+    "support@gardenleap.com",
+    "support@vazava.com",
     "support@magliba.com",
     "support@bokocoko.com",
     "support@drupid.com",
@@ -32,6 +41,9 @@ list_mail_support = [
     "support@lovasuit.com",
 ]
 list_company_logo_URL = [
+    "https://newsongspost.com/wp-content/uploads/2025/06/Flux_Dev_Design_a_modern_and_warm_logo_for_a_POD_merchandise_w_2__1_-removebg-preview.png",
+    "https://gardenleap.com/wp-content/uploads/2025/06/cropped-Flux_Dev_Create_a_stylized_logo_for_the_Gardenleap_Store_websi_0__1_-removebg-preview.png",
+    "https://vazava.com/wp-content/uploads/2025/06/Flux_Dev_Design_a_modern_and_warm_logo_for_a_POD_merchandise_w_0__1_-removebg-preview.png",
     "https://magliba.com/wp-content/uploads/2025/05/Flux_Dev_Design_a_typographical_logo_for_the_magliba_website_w_1__1_-removebg-preview.png",
     "https://bokocoko.com/wp-content/uploads/2025/05/Flux_Dev_Create_a_logo_for_the_website_bokocoko_with_a_hobbies_3-removebg-preview.png",
     "https://drupid.com/wp-content/uploads/2025/05/Flux_Dev_Create_a_modern_logo_for_the_Drupid_Store_website_inc_3__1_-removebg-preview.png",
@@ -42,6 +54,21 @@ list_company_logo_URL = [
 # ✅ Thiết lập thông tin API Gmail
 
 zoho_keys = {
+    "Newsongspost": {
+                    "CLIENT_ID": "1000.LCPONTQJE0INO5UMANPG6NSXW9DW6G",
+                    "CLIENT_SECRET": "115f550fa716ef4aecebc2fd7aabc451b6f1375b18",
+                    "REFRESH_TOKEN": "1000.f9d892dfccc11abf88cab97e4f482f5f.de6213f5e43053955b5af380333cefe5"
+    },
+    "Gardenleap": {
+                    "CLIENT_ID": "1000.O42S19DWA21R2HP1IAU7D1KFYFW51Y",
+                    "CLIENT_SECRET": "2adbce62e067eeca32af43c7c01c1339b5c83830d1",
+                    "REFRESH_TOKEN": "1000.484547bee5dd54cc606620fdcb0caf2e.e6af5047406b0f83cad55522aba73c09"
+    },
+    "Vazava": {
+                    "CLIENT_ID": "1000.1V8IV7RE0C5GHOBE1Z8VCDSASTWWTB",
+                    "CLIENT_SECRET": "f24909443ecc279754dfd39078ca0d6219928c37b2",
+                    "REFRESH_TOKEN": "1000.9760730356448bab6ac92e6394153182.596ff02b9c93b0e1bad53c2a1f28d2b0"
+    },
     "Magliba": {
                     "CLIENT_ID": "1000.0LWCZ499LN2L1T0058H137MEBR7SOS",
                     "CLIENT_SECRET": "d790ef54e6f9e8dea190fd4e6f19cfa774c957c0b1",

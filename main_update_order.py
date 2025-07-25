@@ -9,6 +9,41 @@ from gspread_formatting import (
 )# 🌟 Danh sách WooCommerce Stores & Google Sheets
 WOOCOMMERCE_STORES = [
     {
+        "url": "https://freshnextday.com/wp-json/wc/v3/orders",
+        "product_url": "https://freshnextday.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_b2e243ad4b4a16346d0278911b2f5f58fced9b36",
+        "consumer_secret": "cs_5f986dec33ad014c8e47bc63d18309081c34ba9e",
+        "sheet_id": "1J6eaYYAlWvl7O5dZl2cPUzk7j4mQqh5cFPMp0RDMZ5A"
+    },
+    {
+        "url": "https://kissmybeauty.com/wp-json/wc/v3/orders",
+        "product_url": "https://kissmybeauty.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_8877e33bfa85f6cc60adf55b4ad55c28367fb966",
+        "consumer_secret": "cs_405bae2f05db4b2ba2edb86a57aa3c42ed973421",
+        "sheet_id": "1CPgx-bmKtEWMnoItPF63UE7iZ-L5ffMbdxUgFnwA1K8"
+    },
+    # {
+    #     "url": "https://wootribe.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://wootribe.com/wp-json/wc/v3/products/",
+    #     "consumer_key": "ck_07183b7e5010f62267ce2de0f3dc4ad857f6e741",
+    #     "consumer_secret": "cs_e4794d9bf605eed55d4ceb666e7f9002751abc9c",
+    #     "sheet_id": "1nZUie608lmhRXWq-FOIDmtjNhmm-vI-IoK9Puu94hTI"
+    # },
+    {
+        "url": "https://umpass.com/wp-json/wc/v3/orders",
+        "product_url": "https://umpass.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_f96879f17da4e9d96d9fb00849e6ec5ba75098ff",
+        "consumer_secret": "cs_d31504f5d156a946dd0aab995afc3aa228421e75",
+        "sheet_id": "1M4w6T8PP0S7U868KB6YHyMAWmptOaxJZfjNFr3TPIU8"
+    },
+    {
+        "url": "https://newsongspost.com/wp-json/wc/v3/orders",
+        "product_url": "https://newsongspost.com/wp-json/wc/v3/products/",
+        "consumer_key": "ck_6aa0d63f5799bcd425c86790a8612847c37a8a32",
+        "consumer_secret": "cs_f898d79c6c2b347ceebf70336a4e62840e25f4d2",
+        "sheet_id": "1WYCdD01faFIwJknZSmd_vYur2hwqHVIRKwt8BP_yX1Q"
+    },
+    {
         "url": "https://vazava.com/wp-json/wc/v3/orders",
         "product_url": "https://vazava.com/wp-json/wc/v3/products/",
         "consumer_key": "ck_7f2f6c2061cd1905ab2f097055a72e742567a1f8",
@@ -92,13 +127,13 @@ WOOCOMMERCE_STORES = [
         "consumer_secret": "cs_4f32ece7b9fc0dbfdbc69e41f62a4bcfe932ec7d",
         "sheet_id": "18Y44B205GJBhgbMrhfOdcc1dcjxsujjjFkHx49cwsU0"
     },
-    {
-        "url": "https://printpear.com/wp-json/wc/v3/orders",
-        "product_url": "https://printpear.com/wp-json/wc/v3/products/",    
-        "consumer_key": "ck_be16945fe0444e5e6c9e928f8be6e48e169c8dd3",
-        "consumer_secret": "cs_75c0c0fcbcdb7a2975614b1abaa9b35ebe96b1f4",
-        "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
-    },
+    # {
+    #     "url": "https://printpear.com/wp-json/wc/v3/orders",
+    #     "product_url": "https://printpear.com/wp-json/wc/v3/products/",    
+    #     "consumer_key": "ck_be16945fe0444e5e6c9e928f8be6e48e169c8dd3",
+    #     "consumer_secret": "cs_75c0c0fcbcdb7a2975614b1abaa9b35ebe96b1f4",
+    #     "sheet_id": "1avty1G04ugUEiS5pwJPKFW0YZr8Rh-ogyro4HajZyRc"
+    # },
     # {
     #     "url": "https://cracksetup.com/wp-json/wc/v3/orders",
     #     "product_url": "https://cracksetup.com/wp-json/wc/v3/products/",    
@@ -305,6 +340,7 @@ def fetch_orders(store):
             f"{store['url']}?per_page={per_page}&page={page}&consumer_key={store['consumer_key']}&consumer_secret={store['consumer_secret']}",headers=headers
         )
         data = response.json()
+        # print ('data',data)
         if not data or isinstance(data, dict) and "status" in data and data["status"] != 200:
             break
         orders.extend(data)
@@ -419,7 +455,7 @@ def process_orders(title,orders, existing_orders,store, checking_maps):
                 # valid_genders = {"Men", "Women", "Unisex"}
                 # gender = gender if gender in valid_genders else ""
 
-                type_ = extract_metadata_value(item["meta_data"], ["Type", "TYPE:", "Style:", "Stype", "STYPE","pa_style","STYPE:"])
+                type_ = extract_metadata_value(item["meta_data"], ["Type", "TYPE:", "Style:", "Stype", "STYPE","pa_style","STYPE:","Product Type","Product Type:"])
                 # type_ = clean_value(type_)
                 # type_ = "" if type_ in valid_genders else type_
                 product_url, list_link_image, sku_workshop, factory = fetch_product_details(store, product_id ,type_)

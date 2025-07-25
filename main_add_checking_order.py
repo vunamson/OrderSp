@@ -19,6 +19,36 @@ SHEET_AND_STORES = {
     #     "consumer_secret": "cs_cffd7acb2e5b6c5629e1a30ae580efdf73411fba",
     #     "type_date": "Etc/GMT+4"
     # },
+    "1J6eaYYAlWvl7O5dZl2cPUzk7j4mQqh5cFPMp0RDMZ5A": {
+        "url": "https://freshnextday.com/",
+        "consumer_key": "ck_b2e243ad4b4a16346d0278911b2f5f58fced9b36",
+        "consumer_secret": "cs_5f986dec33ad014c8e47bc63d18309081c34ba9e",
+        "type_date": "Etc/GMT+0"
+    },
+    "1CPgx-bmKtEWMnoItPF63UE7iZ-L5ffMbdxUgFnwA1K8": {
+        "url": "https://kissmybeauty.com/",
+        "consumer_key": "ck_8877e33bfa85f6cc60adf55b4ad55c28367fb966",
+        "consumer_secret": "cs_405bae2f05db4b2ba2edb86a57aa3c42ed973421",
+        "type_date": "Etc/GMT+0"
+    },
+    "1nZUie608lmhRXWq-FOIDmtjNhmm-vI-IoK9Puu94hTI": {
+        "url": "https://wootribe.com/",
+        "consumer_key": "ck_07183b7e5010f62267ce2de0f3dc4ad857f6e741",
+        "consumer_secret": "cs_e4794d9bf605eed55d4ceb666e7f9002751abc9c",
+        "type_date": "Etc/GMT+0"
+    },
+    "1M4w6T8PP0S7U868KB6YHyMAWmptOaxJZfjNFr3TPIU8": {
+        "url": "https://umpass.com/",
+        "consumer_key": "ck_f96879f17da4e9d96d9fb00849e6ec5ba75098ff",
+        "consumer_secret": "cs_d31504f5d156a946dd0aab995afc3aa228421e75",
+        "type_date": "Etc/GMT+0"
+    },
+    "1WYCdD01faFIwJknZSmd_vYur2hwqHVIRKwt8BP_yX1Q": {
+        "url": "https://newsongspost.com/",
+        "consumer_key": "ck_6aa0d63f5799bcd425c86790a8612847c37a8a32",
+        "consumer_secret": "cs_f898d79c6c2b347ceebf70336a4e62840e25f4d2",
+        "type_date": "Etc/GMT+0"
+    },
     "1GGFnHXapQZNGOh71qmQi5-OdCSYnfgewK1XHDhHu4Fc": {
         "url": "https://vazava.com/",
         "consumer_key": "ck_7f2f6c2061cd1905ab2f097055a72e742567a1f8",
@@ -147,7 +177,7 @@ def update_order_tracking(order_id, tracking_number, store_config):
         # Dữ liệu gửi đi, bao gồm tracking number và provider
         try : 
             payload = {
-                "custom_tracking_provider": "Custom Provider",  # Thay provider name theo yêu cầu
+                "custom_tracking_provider": "USPS",  # Thay provider name theo yêu cầu
                 "tracking_number": tracking_number,
                 "custom_tracking_link" :  f"https://t.17track.net/en#nums={tracking_number}",
                 "date_shipped": get_current_time_in_timezone(store_config["type_date"])
